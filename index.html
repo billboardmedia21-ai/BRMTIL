@@ -105,15 +105,22 @@
       -webkit-text-fill-color: transparent;
     }
     #faq-extra.hidden { display: none; }
+
+    /* Agenda timeline — stack on mobile */
+    @media (max-width: 639px) {
+      #agenda .group { flex-direction: column; gap: 0.25rem; }
+      #agenda .group > div:first-child { width: 100% !important; text-align: left !important; padding-top: 0.25rem !important; }
+      #agenda .group > div:nth-child(2) { padding-left: 1.25rem !important; }
+    }
   </style>
 </head>
 <body class="bg-white text-on-surface font-sans h-auto min-h-full">
 
 <!-- BEGIN: Navigation -->
 <nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-surface-container-high">
-  <div class="max-w-7xl mx-auto px-8 flex justify-between items-center h-20">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 flex justify-between items-center h-20">
     <div class="flex-shrink-0 flex items-center">
-      <a href="#home"><img alt="MEDICREATIVE Logo" class="h-12 w-auto object-contain" src="logo.png"/></a>
+      <a href="#home"><img alt="MEDICREATIVE Logo" class="h-10 md:h-12 w-auto object-contain" src="logo.png"/></a>
     </div>
     <div class="hidden md:flex space-x-8 text-sm tracking-wide">
       <a class="text-on-surface-variant hover:text-primary transition-colors font-medium" href="#home">Home</a>
@@ -122,15 +129,29 @@
       <a class="text-on-surface-variant hover:text-primary transition-colors font-medium" href="#tickets">Tickets</a>
       <a class="text-on-surface-variant hover:text-primary transition-colors font-medium" href="#">Sponsors</a>
     </div>
-    <div class="flex items-center gap-4">
-      <a class="bg-primary text-white px-6 py-2.5 rounded-md font-semibold hover:bg-primary-container transition-all active:scale-95" href="#tickets">Register Now</a>
+    <div class="flex items-center gap-3">
+      <a class="hidden md:inline-block bg-primary text-white px-6 py-2.5 rounded-md font-semibold hover:bg-primary-container transition-all active:scale-95" href="#tickets">Register Now</a>
+      <button id="hamburger-btn" class="md:hidden flex flex-col justify-center gap-1.5 w-10 h-10 p-2" onclick="toggleMobileMenu()" aria-label="Menu">
+        <span class="block w-full h-0.5 bg-on-surface rounded transition-all"></span>
+        <span class="block w-full h-0.5 bg-on-surface rounded transition-all"></span>
+        <span class="block w-full h-0.5 bg-on-surface rounded transition-all"></span>
+      </button>
     </div>
+  </div>
+  <!-- Mobile Menu -->
+  <div id="mobile-nav" class="hidden md:hidden bg-white border-b border-surface-container-high px-6 py-6 flex flex-col gap-5 shadow-lg">
+    <a class="text-on-surface-variant font-medium text-base py-1" href="#home" onclick="closeMobileMenu()">Home</a>
+    <a class="text-on-surface-variant font-medium text-base py-1" href="#speakers" onclick="closeMobileMenu()">Speakers</a>
+    <a class="text-on-surface-variant font-medium text-base py-1" href="#agenda" onclick="closeMobileMenu()">Agenda</a>
+    <a class="text-on-surface-variant font-medium text-base py-1" href="#tickets" onclick="closeMobileMenu()">Tickets</a>
+    <a class="text-on-surface-variant font-medium text-base py-1" href="#" onclick="closeMobileMenu()">Sponsors</a>
+    <a class="bg-primary text-white px-6 py-3 rounded-xl font-semibold text-center hover:bg-primary-container transition-all" href="#tickets" onclick="closeMobileMenu()">Register Now</a>
   </div>
 </nav>
 <!-- END: Navigation -->
 
 <!-- BEGIN: Hero Section -->
-<section id="home" class="relative pt-32 pb-32 overflow-hidden flex items-start">
+<section id="home" class="relative pt-24 pb-16 md:pt-32 md:pb-32 overflow-hidden flex items-start">
   <div class="absolute inset-0 z-0">
     <img alt="Medical Conference Background" class="w-full h-full object-cover brightness-90 opacity-30" src="hero-background.jpg"/>
     <div class="absolute inset-0 bg-gradient-to-b from-white/20 via-white/40 to-white"></div>
@@ -159,7 +180,7 @@
     <!-- Featured Logos -->
     <div class="pt-8 border-t border-surface-container-high">
       <p class="text-[10px] font-bold text-outline uppercase tracking-widest mb-6">Pioneering Partners in Healthcare</p>
-      <div class="grid grid-cols-4 items-center w-full">
+      <div class="grid grid-cols-2 sm:grid-cols-4 items-center w-full gap-y-6 sm:gap-y-0">
         <div class="flex items-center justify-center">
           <img alt="AVMC" class="h-16 w-auto object-contain" src="avmc.png"/>
         </div>
@@ -178,7 +199,7 @@
 </section>
 
 <!-- BEGIN: Event Summary Section -->
-<section class="bg-white py-24">
+<section class="bg-white py-14 md:py-24">
   <div class="max-w-7xl mx-auto px-4">
     <div class="max-w-3xl mx-auto text-center">
       <h2 class="text-4xl md:text-5xl font-black text-on-surface mb-6 leading-tight uppercase tracking-tight">
@@ -196,7 +217,7 @@
 <!-- END: Event Summary Section -->
 
 <!-- BEGIN: Value Grid -->
-<section class="bg-surface-container-lowest text-on-surface py-24">
+<section class="bg-surface-container-lowest text-on-surface py-14 md:py-24">
   <div class="max-w-7xl mx-auto px-4">
     <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
       <div class="md:col-span-2 lg:col-span-1 bg-white p-10 rounded-3xl border border-surface-container-high flex flex-col justify-between shadow-sm">
@@ -206,9 +227,9 @@
         </div>
         <a class="mt-10 text-primary font-bold flex items-center gap-2 hover:gap-3 transition-all" href="#tickets">Get Passes Now <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17 8l4 4m0 0l-4 4m4-4H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></a>
       </div>
-      <div class="md:col-span-1 lg:col-span-2 bg-gradient-to-br from-primary to-primary-container p-12 rounded-3xl flex flex-col items-center justify-center text-center relative overflow-hidden group shadow-lg">
-        <h2 class="text-6xl font-black mb-6 leading-none text-white">The Future of Regenerative Medicine.</h2>
-        <p class="text-xl text-white/90 max-w-md">Join a high-impact gathering focused on longevity, cellular therapies, and age-reversal science. Hear from global leaders, explore real clinical breakthroughs, and connect with pioneers shaping the next era of human health.</p>
+      <div class="md:col-span-1 lg:col-span-2 bg-gradient-to-br from-primary to-primary-container p-8 md:p-12 rounded-3xl flex flex-col items-center justify-center text-center relative overflow-hidden group shadow-lg">
+        <h2 class="text-3xl md:text-5xl lg:text-6xl font-black mb-4 md:mb-6 leading-none text-white">The Future of Regenerative Medicine.</h2>
+        <p class="text-base md:text-xl text-white/90 max-w-md">Join a high-impact gathering focused on longevity, cellular therapies, and age-reversal science. Hear from global leaders, explore real clinical breakthroughs, and connect with pioneers shaping the next era of human health.</p>
         <div class="absolute bottom-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
           <svg class="w-48 h-48 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M19,3H5C3.89,3 3,3.9 3,5V19C3,20.1 3.89,21 5,21H19C20.11,21 21,20.1 21,19V5C21,3.9 20.11,3 19,3M19,19H5V5H19V19M13.96,12.29L11.21,15.83L9.25,13.47L6.5,17H17.5L13.96,12.29Z"></path></svg>
         </div>
@@ -229,7 +250,7 @@
 <!-- END: Value Grid -->
 
 <!-- BEGIN: Speakers Section -->
-<section class="py-32 bg-white" id="speakers">
+<section class="py-16 md:py-32 bg-white" id="speakers">
   <div class="max-w-7xl mx-auto px-4">
     <div class="text-center mb-20">
       <h2 class="text-5xl font-extrabold mb-6">Keynote Speakers &amp; Medical Experts</h2>
@@ -314,7 +335,7 @@
 <!-- END: Speakers Section -->
 
 <!-- BEGIN: Registration Passes -->
-<section class="py-32 bg-surface-container-low" id="tickets">
+<section class="py-16 md:py-32 bg-surface-container-low" id="tickets">
   <div class="max-w-7xl mx-auto px-4">
     <div class="text-center mb-20">
       <h2 class="text-5xl font-extrabold mb-6">Registration Passes</h2>
@@ -360,7 +381,7 @@
 <!-- END: Registration Passes -->
 
 <!-- BEGIN: Agenda Section -->
-<section class="py-32 bg-white text-on-surface" id="agenda">
+<section class="py-16 md:py-32 bg-white text-on-surface" id="agenda">
   <div class="max-w-4xl mx-auto px-4">
     <div class="text-center mb-12">
       <h2 class="text-5xl font-extrabold mb-6">Event Agenda</h2>
@@ -715,12 +736,12 @@
 </script>
 
 <!-- BEGIN: Abstract Competition -->
-<section class="py-32 bg-surface-container-low">
+<section class="py-16 md:py-32 bg-surface-container-low">
   <div class="max-w-7xl mx-auto px-4">
-    <div class="bg-white rounded-[3rem] p-16 shadow-2xl flex flex-wrap lg:flex-nowrap items-center gap-16 border border-surface-container-high">
-      <div class="lg:w-1/2 space-y-8">
+    <div class="bg-white rounded-[2rem] md:rounded-[3rem] p-6 sm:p-10 md:p-16 shadow-2xl flex flex-wrap lg:flex-nowrap items-center gap-8 md:gap-16 border border-surface-container-high">
+      <div class="w-full lg:w-1/2 space-y-5 md:space-y-8">
         <span class="inline-block bg-primary/10 text-primary px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-widest">For Every Stage of the Journey</span>
-        <h2 class="text-6xl font-black leading-tight text-on-surface">Advance Your <span class="text-primary">Medical Journey</span></h2>
+        <h2 class="text-4xl md:text-6xl font-black leading-tight text-on-surface">Advance Your <span class="text-primary">Medical Journey</span></h2>
         <p class="text-on-surface-variant text-xl leading-relaxed">Designed for every stage of the medical journey — from students to experienced clinicians — this event unlocks opportunities to learn, present, and grow in regenerative medicine and longevity science.</p>
         <ul class="space-y-5">
           <li class="flex items-start gap-4 text-on-surface">
@@ -742,11 +763,11 @@
             <div><span class="font-bold">For UG Students:</span> Explore cutting-edge fields, learn from leaders, and build early exposure in regenerative medicine.</div>
           </li>
         </ul>
-        <div class="pt-10">
-          <a class="bg-primary text-white px-12 py-5 rounded-2xl font-black text-xl inline-block hover:shadow-2xl hover:-translate-y-1 transition-all" href="#tickets">Join the Experience</a>
+        <div class="pt-4 md:pt-10">
+          <a class="bg-primary text-white px-8 md:px-12 py-4 md:py-5 rounded-2xl font-black text-lg md:text-xl inline-block hover:shadow-2xl hover:-translate-y-1 transition-all" href="#tickets">Join the Experience</a>
         </div>
       </div>
-      <div class="lg:w-1/2 relative">
+      <div class="w-full lg:w-1/2 relative">
         <div class="absolute -inset-4 bg-primary/5 rounded-[2.5rem] blur-2xl"></div>
         <img alt="Medical Research" class="relative rounded-[2rem] shadow-2xl w-full object-cover aspect-video border-8 border-surface-container" src="hero-background.jpg"/>
       </div>
@@ -756,7 +777,7 @@
 <!-- END: Abstract Competition -->
 
 <!-- BEGIN: Trusted Wall -->
-<section class="bg-white border-t border-surface-container-high py-32">
+<section class="bg-white border-t border-surface-container-high py-16 md:py-32">
   <div class="max-w-7xl mx-auto px-4">
     <h3 class="text-on-surface text-center text-3xl font-bold mb-20 opacity-80">Accredited by Global Medical Elites</h3>
     <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-x-12 gap-y-16 opacity-40 grayscale">
@@ -778,9 +799,9 @@
 <!-- END: Trusted Wall -->
 
 <!-- BEGIN: FAQ -->
-<section class="py-32 bg-surface-container-low">
+<section class="py-16 md:py-32 bg-surface-container-low">
   <div class="max-w-5xl mx-auto px-4">
-    <div class="grid lg:grid-cols-5 gap-16">
+    <div class="grid lg:grid-cols-5 gap-8 md:gap-16">
       <div class="lg:col-span-2">
         <h2 class="text-5xl font-black mb-8 leading-tight text-on-surface">FAQ</h2>
         <p class="text-on-surface-variant text-lg mb-10 leading-relaxed">For inquiries regarding institutional grants or CME accreditation, contact our delegate support.</p>
@@ -850,16 +871,16 @@
 <!-- END: FAQ -->
 
 <!-- BEGIN: Footer -->
-<footer class="bg-surface-container-low border-t border-surface-container-high pt-20 pb-10">
-  <div class="max-w-7xl mx-auto px-8">
-    <div class="flex flex-col lg:flex-row justify-between gap-12 mb-16">
+<footer class="bg-surface-container-low border-t border-surface-container-high pt-12 md:pt-20 pb-10">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="flex flex-col lg:flex-row justify-between gap-10 md:gap-12 mb-12 md:mb-16">
       <!-- Brand — left -->
       <div class="lg:w-1/2">
-        <img alt="MEDICREATIVE Logo" class="h-24 w-auto object-contain mb-4 -ml-24" src="logo.png"/>
+        <img alt="MEDICREATIVE Logo" class="h-16 md:h-24 w-auto object-contain mb-4 -ml-4 md:-ml-24" src="logo.png"/>
         <p class="text-on-surface-variant text-sm leading-snug max-w-xs">Advancing medical frontiers through<br/>interdisciplinary clinical research and<br/>cutting-edge healthcare delivery.</p>
       </div>
       <!-- Quick Links + Contact — right end -->
-      <div class="flex gap-16 lg:justify-end">
+      <div class="flex flex-wrap gap-10 md:gap-16 lg:justify-end">
         <div>
           <h4 class="font-bold text-on-surface mb-6 uppercase tracking-widest text-xs">Quick Links</h4>
           <ul class="space-y-4">
@@ -896,6 +917,13 @@
 <!-- END: Footer -->
 
 <script>
+  function toggleMobileMenu() {
+    document.getElementById('mobile-nav').classList.toggle('hidden');
+  }
+  function closeMobileMenu() {
+    document.getElementById('mobile-nav').classList.add('hidden');
+  }
+
   document.getElementById('show-faq')?.addEventListener('click', function() {
     const extra = document.getElementById('faq-extra');
     if (extra) {
