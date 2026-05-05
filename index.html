@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html class="scroll-smooth h-auto min-h-full" lang="en">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>MediCreative Symposium | Advancing Healthcare Technology</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "secondary-fixed": "#e0e0ff",
+            "on-secondary": "#ffffff",
+            "secondary-container": "#959efd",
+            "on-primary-container": "#f4fffb",
+            "on-surface": "#191c1d",
+            "on-tertiary-fixed-variant": "#354a53",
+            "on-tertiary-container": "#fbfdff",
+            "surface-container": "#eceeef",
+            "primary-container": "#008376",
+            "on-primary-fixed-variant": "#005048",
+            "secondary-fixed-dim": "#bdc2ff",
+            "on-secondary-fixed-variant": "#343d96",
+            "on-primary-fixed": "#00201c",
+            "tertiary-fixed-dim": "#b4cad6",
+            "surface": "#f8fafb",
+            "surface-bright": "#f8fafb",
+            "on-secondary-container": "#27308a",
+            "error": "#ba1a1a",
+            "tertiary-fixed": "#cfe6f2",
+            "on-tertiary": "#ffffff",
+            "on-error": "#ffffff",
+            "inverse-on-surface": "#eff1f2",
+            "surface-container-lowest": "#ffffff",
+            "surface-tint": "#006b5f",
+            "on-error-container": "#93000a",
+            "primary-fixed-dim": "#70d8c8",
+            "on-tertiary-fixed": "#071e27",
+            "error-container": "#ffdad6",
+            "on-secondary-fixed": "#000767",
+            "surface-container-low": "#f2f4f5",
+            "primary-fixed": "#8df5e4",
+            "outline": "#6d7a77",
+            "tertiary-container": "#627882",
+            "on-background": "#191c1d",
+            "on-primary": "#ffffff",
+            "surface-dim": "#d8dadb",
+            "primary": "#00685d",
+            "tertiary": "#4a5f69",
+            "surface-variant": "#e1e3e4",
+            "background": "#f8fafb",
+            "surface-container-high": "#e6e8e9",
+            "surface-container-highest": "#e1e3e4",
+            "on-surface-variant": "#3d4946",
+            "secondary": "#4c56af",
+            "inverse-primary": "#70d8c8",
+            "inverse-surface": "#2e3132",
+            "outline-variant": "#bcc9c5"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "unit": "4px",
+            "stack-lg": "32px",
+            "stack-sm": "8px",
+            "margin-page": "48px",
+            "container-max": "1280px",
+            "gutter": "24px",
+            "stack-md": "16px",
+            "section-padding": "80px"
+          },
+          "fontFamily": {
+            "sans": ["Public Sans", "sans-serif"],
+            "h3": ["Public Sans"],
+            "body-lg": ["Public Sans"],
+            "label-caps": ["Public Sans"],
+            "h1": ["Public Sans"],
+            "body-md": ["Public Sans"],
+            "h2": ["Public Sans"]
+          },
+          "fontSize": {
+            "h3": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+            "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+            "label-caps": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "700"}],
+            "h1": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+            "h2": ["32px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+          }
+        },
+      },
+    }
+  </script>
+  <style>
+    .speaker-card:hover .speaker-overlay { opacity: 1; }
+    .text-gradient {
+      background: linear-gradient(to right, #00685d, #008376);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    #faq-extra.hidden { display: none; }
+  </style>
+</head>
+<body class="bg-white text-on-surface font-sans h-auto min-h-full">
+
+<!-- BEGIN: Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-surface-container-high">
+  <div class="max-w-7xl mx-auto px-8 flex justify-between items-center h-20">
+    <div class="flex-shrink-0 flex items-center">
+      <img alt="MEDICREATIVE Logo" class="h-12 w-auto object-contain" src="logo.png"/>
+    </div>
+    <div class="hidden md:flex space-x-8 text-sm tracking-wide">
+      <a class="text-on-surface-variant hover:text-primary transition-colors font-medium" href="#speakers">Speakers</a>
+      <a class="text-on-surface-variant hover:text-primary transition-colors font-medium" href="#agenda">Agenda</a>
+      <a class="text-on-surface-variant hover:text-primary transition-colors font-medium" href="#tickets">Tickets</a>
+      <a class="text-on-surface-variant hover:text-primary transition-colors font-medium" href="#">Sponsors</a>
+    </div>
+    <div class="flex items-center gap-4">
+      <a class="bg-primary text-white px-6 py-2.5 rounded-md font-semibold hover:bg-primary-container transition-all active:scale-95" href="#tickets">Register Now</a>
+    </div>
+  </div>
+</nav>
+<!-- END: Navigation -->
+
+<!-- BEGIN: Hero Section -->
+<section class="relative pt-32 pb-32 overflow-hidden flex items-start">
+  <div class="absolute inset-0 z-0">
+    <img alt="Medical Conference Background" class="w-full h-full object-cover brightness-90 opacity-30" src="hero-background.jpg"/>
+    <div class="absolute inset-0 bg-gradient-to-b from-white/20 via-white/40 to-white"></div>
+  </div>
+  <div class="relative z-10 max-w-7xl mx-auto px-4 text-center">
+    <img alt="BRMTIL MCHENNAI 2026 Logo" class="w-full mx-auto h-auto object-contain mb-10 drop-shadow-2xl max-w-[110rem] block" src="hero-bg.png"/>
+    <div class="max-w-3xl mx-auto mb-10">
+      <div class="bg-primary/95 backdrop-blur-sm rounded-xl p-2.5 shadow-xl border border-white/20 grid grid-cols-1 md:grid-cols-3 gap-3 items-center text-white">
+        <div class="flex flex-col items-center md:items-start md:pl-4 border-white/20 md:border-r py-1">
+          <span class="text-[8px] font-bold uppercase tracking-[0.2em] opacity-80 mb-0.5">Date</span>
+          <span class="text-base font-black">19-20 JUNE 2026</span>
+        </div>
+        <div class="flex flex-col items-center border-white/20 md:border-r py-1">
+          <span class="text-[8px] font-bold uppercase tracking-[0.2em] opacity-80 mb-0.5">Timing</span>
+          <span class="text-base font-black">8:30-17:00</span>
+        </div>
+        <div class="flex flex-col items-center md:items-end md:pr-4 py-1">
+          <span class="text-[8px] font-bold uppercase tracking-[0.2em] opacity-80 mb-0.5">Location</span>
+          <span class="text-sm font-bold text-center md:text-right leading-tight">Pullman Chennai, Anna Salai</span>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-wrap justify-center gap-5 mb-10">
+      <a class="bg-primary text-white px-10 py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all" href="#tickets">Secure Your Pass Now →</a>
+      <a class="border-2 border-outline-variant text-on-surface px-10 py-4 rounded-xl font-bold text-lg hover:bg-surface-variant hover:border-primary hover:text-primary transition-all" href="#">Research Sponsorship →</a>
+    </div>
+    <!-- Featured Logos -->
+    <div class="pt-8 border-t border-surface-container-high">
+      <p class="text-[10px] font-bold text-outline uppercase tracking-widest mb-6">Pioneering Partners in Healthcare</p>
+      <div class="grid grid-cols-4 items-center w-full">
+        <div class="flex items-center justify-center">
+          <img alt="AVMC" class="h-16 w-auto object-contain" src="avmc.png"/>
+        </div>
+        <div class="flex items-center justify-center">
+          <img alt="Vinayaka Mission's Research Foundation" class="h-16 w-auto object-contain" src="vmrf.png"/>
+        </div>
+        <div class="flex items-center justify-center">
+          <img alt="European Wellness Academy" class="h-16 w-auto object-contain" src="ewa.png"/>
+        </div>
+        <div class="flex items-center justify-center">
+          <img alt="Vinayaka Missions Superspeciality Hospital" class="h-16 w-auto object-contain" src="vmsh.png"/>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEGIN: Event Summary Section -->
+<section class="bg-white py-24">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-4xl md:text-5xl font-black text-on-surface mb-6 leading-tight uppercase tracking-tight">
+        Event <span class="text-primary">Summary.</span>
+      </h2>
+      <p class="text-lg md:text-xl text-on-surface-variant mb-10 leading-relaxed font-medium">Reimagining the future of health through breakthroughs in regenerative medicine and longevity science. Join global leaders, researchers, and innovators shaping the next era of human lifespan and vitality. Discover ideas, technologies, and conversations that are redefining how we heal, age, and thrive.</p>
+      <div class="flex justify-center gap-4">
+        <a class="border-2 border-primary text-primary px-10 py-3.5 rounded-xl font-bold text-lg hover:bg-primary/5 transition-all shadow-sm" href="#tickets">
+          Learn More about Event
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- END: Event Summary Section -->
+
+<!-- BEGIN: Value Grid -->
+<section class="bg-surface-container-lowest text-on-surface py-24">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
+      <div class="md:col-span-2 lg:col-span-1 bg-white p-10 rounded-3xl border border-surface-container-high flex flex-col justify-between shadow-sm">
+        <div>
+          <h3 class="text-3xl font-bold leading-tight">Advancing Longevity Science.</h3>
+          <p class="text-on-surface-variant mt-6 text-lg">Focused on regenerative medicine, cellular therapies, and next-gen healthcare innovation.</p>
+        </div>
+        <a class="mt-10 text-primary font-bold flex items-center gap-2 hover:gap-3 transition-all" href="#tickets">Get Passes Now <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17 8l4 4m0 0l-4 4m4-4H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></a>
+      </div>
+      <div class="md:col-span-1 lg:col-span-2 bg-gradient-to-br from-primary to-primary-container p-12 rounded-3xl flex flex-col items-center justify-center text-center relative overflow-hidden group shadow-lg">
+        <h2 class="text-6xl font-black mb-6 leading-none text-white">The Future of Regenerative Medicine.</h2>
+        <p class="text-xl text-white/90 max-w-md">Join a high-impact gathering focused on longevity, cellular therapies, and age-reversal science. Hear from global leaders, explore real clinical breakthroughs, and connect with pioneers shaping the next era of human health.</p>
+        <div class="absolute bottom-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+          <svg class="w-48 h-48 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M19,3H5C3.89,3 3,3.9 3,5V19C3,20.1 3.89,21 5,21H19C20.11,21 21,20.1 21,19V5C21,3.9 20.11,3 19,3M19,19H5V5H19V19M13.96,12.29L11.21,15.83L9.25,13.47L6.5,17H17.5L13.96,12.29Z"></path></svg>
+        </div>
+      </div>
+      <div class="grid grid-rows-2 gap-8">
+        <div class="bg-white p-10 rounded-3xl border border-surface-container-high flex flex-col justify-center shadow-sm">
+          <div class="text-5xl font-bold text-primary mb-3">400+</div>
+          <p class="text-sm text-outline uppercase tracking-widest font-bold">Clinical Practitioners</p>
+        </div>
+        <div class="bg-white p-10 rounded-3xl border border-surface-container-high flex flex-col justify-center shadow-sm">
+          <div class="text-5xl font-bold text-primary mb-3">10+</div>
+          <p class="text-sm text-outline uppercase tracking-widest font-bold">Speakers</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- END: Value Grid -->
+
+<!-- BEGIN: Speakers Section -->
+<section class="py-32 bg-white" id="speakers">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="text-center mb-20">
+      <h2 class="text-5xl font-extrabold mb-6">Keynote Speakers &amp; Medical Experts</h2>
+      <p class="text-xl text-on-surface-variant max-w-2xl mx-auto">The world's leading medical authorities sharing research that defines the future of healthcare.</p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 max-w-7xl mx-auto">
+      <!-- Speaker 1 -->
+      <div class="group speaker-card">
+        <div class="relative aspect-[4/5] rounded-3xl overflow-hidden mb-6 shadow-md bg-surface-container">
+          <img alt="Dr. V.N. Selvam" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="selvam.jpg"/>
+          <div class="speaker-overlay absolute inset-0 bg-primary/20 opacity-0 transition-opacity flex items-end p-6">
+            <div class="bg-white/95 backdrop-blur p-3 rounded-xl w-full text-center text-xs font-bold uppercase tracking-widest text-on-surface shadow-lg border border-surface-container-high">View Academic Profile</div>
+          </div>
+        </div>
+        <h4 class="font-bold text-xl mb-1 text-on-surface">Dr. V.N. Selvam</h4>
+        <p class="text-on-surface-variant mb-1">Chief of Genomics</p>
+        <p class="text-sm font-bold text-primary uppercase tracking-wider">Regeneron Pharma</p>
+      </div>
+      <!-- Speaker 2 -->
+      <div class="group speaker-card">
+        <div class="relative aspect-[4/5] rounded-3xl overflow-hidden mb-6 shadow-md bg-surface-container">
+          <img alt="Prof. Dr. S. Ravikumar" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="ravikumar.jpg"/>
+          <div class="speaker-overlay absolute inset-0 bg-primary/20 opacity-0 transition-opacity flex items-end p-6">
+            <div class="bg-white/95 backdrop-blur p-3 rounded-xl w-full text-center text-xs font-bold uppercase tracking-widest text-on-surface shadow-lg border border-surface-container-high">View Academic Profile</div>
+          </div>
+        </div>
+        <h4 class="font-bold text-xl mb-1 text-on-surface">Prof. Dr. S. Ravikumar</h4>
+        <p class="text-on-surface-variant mb-1">Director of Oncology</p>
+        <p class="text-sm font-bold text-primary uppercase tracking-wider">Stanford Medicine</p>
+      </div>
+      <!-- Speaker 3 -->
+      <div class="group speaker-card">
+        <div class="relative aspect-[4/5] rounded-3xl overflow-hidden mb-6 shadow-md bg-surface-container">
+          <img alt="Prof. Dato' Sri Dr. Mike Chan" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="mikechan.jpg"/>
+          <div class="speaker-overlay absolute inset-0 bg-primary/20 opacity-0 transition-opacity flex items-end p-6">
+            <div class="bg-white/95 backdrop-blur p-3 rounded-xl w-full text-center text-xs font-bold uppercase tracking-widest text-on-surface shadow-lg border border-surface-container-high">View Academic Profile</div>
+          </div>
+        </div>
+        <h4 class="font-bold text-xl mb-1 text-on-surface">Prof. Dato' Sri Dr. Mike Chan</h4>
+        <p class="text-on-surface-variant mb-1">Lead Researcher</p>
+        <p class="text-sm font-bold text-primary uppercase tracking-wider">Broad Institute</p>
+      </div>
+      <!-- Speaker 4 -->
+      <div class="group speaker-card">
+        <div class="relative aspect-[4/5] rounded-3xl overflow-hidden mb-6 shadow-md bg-surface-container">
+          <img alt="Dr. Prabhu Kumar Raju" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="prabhukumar.jpg"/>
+          <div class="speaker-overlay absolute inset-0 bg-primary/20 opacity-0 transition-opacity flex items-end p-6">
+            <div class="bg-white/95 backdrop-blur p-3 rounded-xl w-full text-center text-xs font-bold uppercase tracking-widest text-on-surface shadow-lg border border-surface-container-high">View Academic Profile</div>
+          </div>
+        </div>
+        <h4 class="font-bold text-xl mb-1 text-on-surface">Dr. Prabhu Kumar Raju</h4>
+        <p class="text-on-surface-variant mb-1">Lead Researcher</p>
+        <p class="text-sm font-bold text-primary uppercase tracking-wider">Global Health Institute</p>
+      </div>
+      <!-- Speaker 5 -->
+      <div class="group speaker-card">
+        <div class="relative aspect-[4/5] rounded-3xl overflow-hidden mb-6 shadow-md bg-surface-container">
+          <img alt="Dr. G.K. Glen Alwin" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="glenalwin.jpg"/>
+          <div class="speaker-overlay absolute inset-0 bg-primary/20 opacity-0 transition-opacity flex items-end p-6">
+            <div class="bg-white/95 backdrop-blur p-3 rounded-xl w-full text-center text-xs font-bold uppercase tracking-widest text-on-surface shadow-lg border border-surface-container-high">View Academic Profile</div>
+          </div>
+        </div>
+        <h4 class="font-bold text-xl mb-1 text-on-surface">Dr. G.K. Glen Alwin</h4>
+        <p class="text-on-surface-variant mb-1">Chief Medical Officer</p>
+        <p class="text-sm font-bold text-primary uppercase tracking-wider">HealthCare Global</p>
+      </div>
+      <!-- Speaker 6 -->
+      <div class="group speaker-card">
+        <div class="relative aspect-[4/5] rounded-3xl overflow-hidden mb-6 shadow-md bg-surface-container">
+          <img alt="Prof. Dr. Olha Nishkumai" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="olha.jpg"/>
+          <div class="speaker-overlay absolute inset-0 bg-primary/20 opacity-0 transition-opacity flex items-end p-6">
+            <div class="bg-white/95 backdrop-blur p-3 rounded-xl w-full text-center text-xs font-bold uppercase tracking-widest text-on-surface shadow-lg border border-surface-container-high">View Academic Profile</div>
+          </div>
+        </div>
+        <h4 class="font-bold text-xl mb-1 text-on-surface">Prof. Dr. Olha Nishkumai</h4>
+        <p class="text-on-surface-variant mb-1">Neurology Lead</p>
+        <p class="text-sm font-bold text-primary uppercase tracking-wider">Oxford Medicine</p>
+      </div>
+      <!-- Speaker 7 -->
+      <div class="group speaker-card">
+        <div class="relative aspect-[4/5] rounded-3xl overflow-hidden mb-6 shadow-md bg-surface-container">
+          <img alt="Prof. Dr. Dmytro" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="dmytro.jpg"/>
+          <div class="speaker-overlay absolute inset-0 bg-primary/20 opacity-0 transition-opacity flex items-end p-6">
+            <div class="bg-white/95 backdrop-blur p-3 rounded-xl w-full text-center text-xs font-bold uppercase tracking-widest text-on-surface shadow-lg border border-surface-container-high">View Academic Profile</div>
+          </div>
+        </div>
+        <h4 class="font-bold text-xl mb-1 text-on-surface">Prof. Dr. Dmytro</h4>
+        <p class="text-on-surface-variant mb-1">Immunology Expert</p>
+        <p class="text-sm font-bold text-primary uppercase tracking-wider">BioTech Research</p>
+      </div>
+      <!-- Speaker 8 -->
+      <div class="group speaker-card">
+        <div class="relative aspect-[4/5] rounded-3xl overflow-hidden mb-6 shadow-md bg-surface-container">
+          <img alt="Dr. Bawani Nesamany" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="bawani.jpg"/>
+          <div class="speaker-overlay absolute inset-0 bg-primary/20 opacity-0 transition-opacity flex items-end p-6">
+            <div class="bg-white/95 backdrop-blur p-3 rounded-xl w-full text-center text-xs font-bold uppercase tracking-widest text-on-surface shadow-lg border border-surface-container-high">View Academic Profile</div>
+          </div>
+        </div>
+        <h4 class="font-bold text-xl mb-1 text-on-surface">Dr. Bawani Nesamany</h4>
+        <p class="text-on-surface-variant mb-1">Pediatric Specialist</p>
+        <p class="text-sm font-bold text-primary uppercase tracking-wider">Unity Health</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- END: Speakers Section -->
+
+<!-- BEGIN: Registration Passes -->
+<section class="py-32 bg-surface-container-low" id="tickets">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="text-center mb-20">
+      <h2 class="text-5xl font-extrabold mb-6">Registration Passes</h2>
+      <p class="text-xl text-on-surface-variant">Select your attendance level for the MediCreative Symposium.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-3xl mx-auto">
+      <!-- For Doctors -->
+      <div class="border-2 border-primary rounded-3xl p-10 flex flex-col shadow-2xl bg-white relative">
+        <div class="absolute -top-px -right-px bg-primary text-white px-6 py-2 rounded-tr-3xl rounded-bl-2xl text-sm font-bold uppercase tracking-wider">Doctors</div>
+        <div class="mb-10">
+          <h3 class="text-2xl font-bold mb-3 text-on-surface">For Doctors</h3>
+          <div class="flex items-baseline gap-2">
+            <span class="text-4xl font-black text-on-surface">₹ 10,000</span>
+            <span class="text-outline font-medium">/ person</span>
+          </div>
+        </div>
+        <ul class="space-y-5 mb-10 flex-grow">
+          <li class="flex items-center gap-3 text-on-surface font-medium"><svg class="w-6 h-6 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg> Full session access</li>
+          <li class="flex items-center gap-3 text-on-surface font-medium"><svg class="w-6 h-6 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg> Networking</li>
+          <li class="flex items-center gap-3 text-on-surface font-medium"><svg class="w-6 h-6 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg> Lunch</li>
+        </ul>
+        <button class="w-full py-5 bg-primary text-white font-bold rounded-2xl shadow-xl shadow-primary/20 hover:bg-primary-container transition-all">Select Pass</button>
+      </div>
+      <!-- For Students -->
+      <div class="border border-surface-container-high rounded-3xl p-10 flex flex-col hover:shadow-xl transition-all duration-300 bg-white group">
+        <div class="mb-10">
+          <h3 class="text-2xl font-bold mb-3 text-on-surface">For Students</h3>
+          <div class="flex items-baseline gap-2">
+            <span class="text-4xl font-black text-on-surface">₹ 7,000</span>
+            <span class="text-outline font-medium">/ person</span>
+          </div>
+        </div>
+        <ul class="space-y-5 mb-10 flex-grow">
+          <li class="flex items-center gap-3 text-on-surface-variant"><svg class="w-6 h-6 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg> Full session access</li>
+          <li class="flex items-center gap-3 text-on-surface-variant"><svg class="w-6 h-6 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg> Networking</li>
+          <li class="flex items-center gap-3 text-on-surface-variant"><svg class="w-6 h-6 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg> Lunch</li>
+        </ul>
+        <button class="w-full py-5 bg-surface-container text-primary font-bold rounded-2xl group-hover:bg-primary group-hover:text-white transition-all">Select Pass</button>
+      </div>
+    </div>
+    <p class="text-center mt-12 text-outline font-medium italic">Academic groups of 10+ contact: <a class="text-primary underline" href="mailto:registrar@medicreative.com">registrar@medicreative.com</a> for grant-funded discounts</p>
+  </div>
+</section>
+<!-- END: Registration Passes -->
+
+<!-- BEGIN: Agenda Section -->
+<section class="py-32 bg-white text-on-surface" id="agenda">
+  <div class="max-w-4xl mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-5xl font-extrabold mb-6">Event Agenda</h2>
+      <p class="text-xl text-on-surface-variant">A comprehensive schedule of sessions, keynote speeches, and networking events.</p>
+    </div>
+
+    <!-- Day Toggle Buttons -->
+    <div class="flex justify-center gap-4 mb-16">
+      <button id="btn-day1" onclick="switchDay(1)" class="px-10 py-3 rounded-xl font-bold text-lg bg-primary text-white shadow-lg transition-all">Day 1</button>
+      <button id="btn-day2" onclick="switchDay(2)" class="px-10 py-3 rounded-xl font-bold text-lg border-2 border-primary text-primary hover:bg-primary/5 transition-all">Day 2</button>
+    </div>
+
+    <!-- DAY 1 -->
+    <div id="day1-content">
+      <div class="space-y-0" id="day1-visible">
+        <!-- Session 1 -->
+        <div class="flex gap-8 group">
+          <div class="w-36 flex-shrink-0 text-right pt-6"><span class="font-bold text-primary text-base">09:00 – 09:30</span></div>
+          <div class="relative flex-grow border-l-2 border-surface-container-high pl-12 pb-10">
+            <div class="absolute -left-[9px] top-7 w-4 h-4 rounded-full bg-primary ring-4 ring-white transition-transform group-hover:scale-125"></div>
+            <div class="p-6 rounded-2xl bg-surface-container-lowest border border-surface-container-high hover:border-primary transition-all shadow-sm group-hover:shadow-md">
+              <h4 class="text-lg font-bold mb-1">Delegate Registration, Check-in, Badges &amp; Tote Bags</h4>
+              <p class="text-on-surface-variant text-sm">Welcome reception and credentialing for all attendees.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Session 2 -->
+        <div class="flex gap-8 group">
+          <div class="w-36 flex-shrink-0 text-right pt-6"><span class="font-bold text-primary text-base">09:30 – 09:45</span></div>
+          <div class="relative flex-grow border-l-2 border-surface-container-high pl-12 pb-10">
+            <div class="absolute -left-[9px] top-7 w-4 h-4 rounded-full bg-primary ring-4 ring-white transition-transform group-hover:scale-125"></div>
+            <div class="p-6 rounded-2xl bg-surface-container-lowest border border-surface-container-high hover:border-primary transition-all shadow-sm group-hover:shadow-md">
+              <h4 class="text-lg font-bold mb-1">Opening Ceremony &amp; Officiation of Conference</h4>
+              <p class="text-on-surface-variant text-sm font-medium">Founders and Leaders of VMRF DU &amp; EWBG</p>
+            </div>
+          </div>
+        </div>
+        <!-- Session 3 -->
+        <div class="flex gap-8 group">
+          <div class="w-36 flex-shrink-0 text-right pt-6"><span class="font-bold text-primary text-base">09:45 – 10:15</span></div>
+          <div class="relative flex-grow border-l-2 border-surface-container-high pl-12 pb-10">
+            <div class="absolute -left-[9px] top-7 w-4 h-4 rounded-full bg-primary ring-4 ring-white transition-transform group-hover:scale-125"></div>
+            <div class="p-6 rounded-2xl bg-surface-container-lowest border border-surface-container-high hover:border-primary transition-all shadow-sm group-hover:shadow-md">
+              <h4 class="text-lg font-bold mb-1">Research in Regenerative Medicine in India</h4>
+              <p class="text-on-surface-variant text-sm font-medium">Prof. Dr. S. Ravikumar</p>
+              <p class="text-sm text-outline mt-1">Dean, FoIDS, VMRF-DU; Assistant Director of Research, AVMC&amp;H Puducherry, India</p>
+            </div>
+          </div>
+        </div>
+        <!-- Session 4 -->
+        <div class="flex gap-8 group">
+          <div class="w-36 flex-shrink-0 text-right pt-6"><span class="font-bold text-primary text-base">10:15 – 11:00</span></div>
+          <div class="relative flex-grow border-l-2 border-surface-container-high pl-12 pb-10">
+            <div class="absolute -left-[9px] top-7 w-4 h-4 rounded-full bg-primary ring-4 ring-white transition-transform group-hover:scale-125"></div>
+            <div class="p-6 rounded-2xl bg-surface-container-lowest border border-surface-container-high hover:border-primary transition-all shadow-sm group-hover:shadow-md">
+              <h4 class="text-lg font-bold mb-1">The Bone-Vascular Axis in Aging</h4>
+              <p class="text-on-surface-variant text-sm font-medium">Prof. Dr. Olha Nishkumai</p>
+              <p class="text-sm text-outline mt-1">Cardiologist &amp; Rheumatologist; Internal Medicine professor at BNMU, Kyiv, Ukraine; Sr. Medical Advisor, European Wellness Biomedical Group; Board Trainer, IBARM</p>
+            </div>
+          </div>
+        </div>
+        <!-- Session 5 -->
+        <div class="flex gap-8 group">
+          <div class="w-36 flex-shrink-0 text-right pt-6"><span class="font-bold text-primary text-base">11:00 – 12:00</span></div>
+          <div class="relative flex-grow border-l-2 border-surface-container-high pl-12 pb-10">
+            <div class="absolute -left-[9px] top-7 w-4 h-4 rounded-full bg-primary ring-4 ring-white transition-transform group-hover:scale-125"></div>
+            <div class="p-6 rounded-2xl bg-surface-container-lowest border border-surface-container-high hover:border-primary transition-all shadow-sm group-hover:shadow-md">
+              <h4 class="text-lg font-bold mb-1">Maximizing Therapeutic Potential of Stem Cells in Tissue Regeneration: From Whole Organ Transplant to Cellular Grafts</h4>
+              <p class="text-on-surface-variant text-sm font-medium">Prof. Dr. Dmytro Klokol</p>
+              <p class="text-sm text-outline mt-1">Group Medical Head, European Biomedical Group; Board Chair, IBARM; Medical Director (Regeneration): European Society of Preventive, Regenerative, and Anti-Aging Medicine (ESAAM)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Day 1 Hidden Sessions -->
+      <div id="day1-extra" class="hidden space-y-0">
+        <!-- Session 6 -->
+        <div class="flex gap-8 group">
+          <div class="w-36 flex-shrink-0 text-right pt-6"><span class="font-bold text-primary text-base">12:00 – 12:30</span></div>
+          <div class="relative flex-grow border-l-2 border-surface-container-high pl-12 pb-10">
+            <div class="absolute -left-[9px] top-7 w-4 h-4 rounded-full bg-primary ring-4 ring-white transition-transform group-hover:scale-125"></div>
+            <div class="p-6 rounded-2xl bg-surface-container-lowest border border-surface-container-high hover:border-primary transition-all shadow-sm group-hover:shadow-md">
+              <h4 class="text-lg font-bold mb-1">Scope of Regenerative Medicine in India</h4>
+              <p class="text-on-surface-variant text-sm font-medium">Dr. Selvam V.N.</p>
+              <p class="text-sm text-outline mt-1">Medical Director &amp; Senior Consultant, General Medicine &amp; Diabetology; Senior Consultant, Vinayaka Mission's Superspeciality Hospital</p>
+            </div>
+          </div>
+        </div>
+        <!-- Session 7 -->
+        <div class="flex gap-8 group">
+          <div class="w-36 flex-shrink-0 text-right pt-6"><span class="font-bold text-primary text-base">12:30 – 13:00</span></div>
+          <div class="relative flex-grow border-l-2 border-surface-container-high pl-12 pb-10">
+            <div class="absolute -left-[9px] top-7 w-4 h-4 rounded-full bg-primary ring-4 ring-white transition-transform group-hover:scale-125"></div>
+            <div class="p-6 rounded-2xl bg-surface-container-lowest border border-surface-container-high hover:border-primary transition-all shadow-sm group-hover:shadow-md">
+              <h4 class="text-lg font-bold mb-1">Peptides and Exosomes in Cutaneous Anti-Ageing Therapy</h4>
+              <p class="text-on-surface-variant text-sm font-medium">Dr. G.K. Glen Alwin</p>
+              <p class="text-sm text-outline mt-1">Aesthetician Dermatologist Consultant; Medical Director, EW Clinic, Kota Kinabalu Sabah; Senior Consultant &amp; Trainer, European Wellness Academy</p>
+            </div>
+          </div>
+        </div>
+        <!-- Session 8 - Buffet -->
+        <div class="flex gap-8 group">
+          <div class="w-36 flex-shrink-0 text-right pt-6"><span class="font-bold text-primary text-base">13:00 – 13:45</span></div>
+          <div class="relative flex-grow border-l-2 border-surface-container-high pl-12 pb-10">
+            <div class="absolute -left-[9px] top-7 w-4 h-4 rounded-full bg-surface-container-high ring-4 ring-white"></div>
+            <div class="p-6 rounded-2xl bg-surface-container border border-surface-container-high transition-all shadow-sm">
+              <h4 class="text-lg font-bold mb-1">🍽 Buffet Lunch</h4>
+              <p class="text-on-surface-variant text-sm">45-minute networking buffet</p>
+            </div>
+          </div>
+        </div>
+        <!-- Session 9 -->
+        <div class="flex gap-8 group">
+          <div class="w-36 flex-shrink-0 text-right pt-6"><span class="font-bold text-primary text-base">13:45 – 14:45</span></div>
+          <div class="relative flex-grow border-l-2 border-surface-container-high pl-12 pb-10">
+            <div class="absolute -left-[9px] top-7 w-4 h-4 rounded-full bg-primary ring-4 ring-white transition-transform group-hover:scale-125"></div>
+            <div class="p-6 rounded-2xl bg-surface-container-lowest border border-surface-container-high hover:border-primary transition-all shadow-sm group-hover:shadow-md">
+              <h4 class="text-lg font-bold mb-1">Cellular &amp; Peptides Therapies in Regenerative as Integrative Medicine</h4>
+              <p class="text-on-surface-variant text-sm font-medium">Prof. Dato' Sri Dr. Mike Chan</p>
+              <p class="text-sm text-outline mt-1">Chairman, European Wellness Biomedical Group; Chairman (Asia) &amp; Head of Scientific Committee, ESAAM; Founder, IACT &amp; IASCT</p>
+              <p class="text-sm text-outline mt-1">State Honors: Conferred the title Dato' Sri by the Sultan of Pahang, Malaysia, for his significant contributions to the medical field and the nation's healthcare profile.</p>
+              <p class="text-sm text-outline mt-1">Recipient of multiple "Lifetime Achievement Awards" for excellence in Medical Science and Bioregenerative Medicine.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Session 10 -->
+        <div class="flex gap-8 group">
+          <div class="w-36 flex-shrink-0 text-right pt-6"><span class="font-bold text-primary text-base">14:45 – 15:15</span></div>
+          <div class="relative flex-grow border-l-2 border-surface-container-high pl-12 pb-10">
+            <div class="absolute -left-[9px] top-7 w-4 h-4 rounded-full bg-primary ring-4 ring-white transition-transform group-hover:scale-125"></div>
+            <div class="p-6 rounded-2xl bg-surface-container-lowest border border-surface-container-high hover:border-primary transition-all shadow-sm group-hover:shadow-md">
+              <h4 class="text-lg font-bold mb-1">Epigenetics — A New Frontier in Medicine</h4>
+              <p class="text-on-surface-variant text-sm font-medium">Dr. Prabhu Kumar Raju</p>
+              <p class="text-sm text-outline mt-1">Epigenetic &amp; Regenerative Medicine Expert; Managing Director, Golden Hands Epigenetic Solutions; Medical Director, Somnifera Wellness</p>
+            </div>
+          </div>
+        </div>
+        <!-- Session 11 -->
+        <div class="flex gap-8 group">
+          <div class="w-36 flex-shrink-0 text-right pt-6"><span class="font-bold text-primary text-base">15:15 – 16:00</span></div>
+          <div class="relative flex-grow border-l-2 border-surface-container-high pl-12 pb-10">
+            <div class="absolute -left-[9px] top-7 w-4 h-4 rounded-full bg-primary ring-4 ring-white transition-transform group-hover:scale-125"></div>
+            <div class="p-6 rounded-2xl bg-surface-container-lowest border border-surface-container-high hover:border-primary transition-all shadow-sm group-hover:shadow-md">
+              <h4 class="text-lg font-bold mb-1">Modern Holistic Treatment of Male Hypogonadism and Erectile Dysfunction</h4>
+              <p class="text-on-surface-variant text-sm font-medium">Prof. Dr. Dmytro Klokol</p>
+              <p class="text-sm text-outline mt-1">Group Medical Head, European Biomedical Group; Board Chair, IBARM; Medical Director (Regeneration), ESAAM</p>
+            </div>
+          </div>
+        </div>
+        <!-- Session 12 -->
+        <div class="flex gap-8 group">
+          <div class="w-36 flex-shrink-0 text-right pt-6"><span class="font-bold text-primary text-base">16:00 – 16:30</span></div>
+          <div class="relative flex-grow border-l-2 border-surface-container-high pl-12 pb-10">
+            <div class="absolute -left-[9px] top-7 w-4 h-4 rounded-full bg-primary ring-4 ring-white transition-transform group-hover:scale-125"></div>
+            <div class="p-6 rounded-2xl bg-surface-container-lowest border border-surface-container-high hover:border-primary transition-all shadow-sm group-hover:shadow-md">
+              <h4 class="text-lg font-bold mb-1">Osteoporosis — Silent Epidemic: Novel Methods of Diagnostic</h4>
+              <p class="text-on-surface-variant text-sm font-medium">Prof. Dr. Olha Nishkumai</p>
+              <p class="text-sm text-outline mt-1">Cardiologist &amp; Rheumatologist; Internal Medicine professor at BNMU, Kyiv, Ukraine; Sr. Medical Advisor, European Wellness Biomedical Group; Board Trainer, IBARM</p>
+            </div>
+          </div>
+        </div>
+        <!-- Session 13 -->
+        <div class="flex gap-8 group">
+          <div class="w-36 flex-shrink-0 text-right pt-6"><span class="font-bold text-primary text-base">16:30 – 17:00</span></div>
+          <div class="relative flex-grow border-l-2 border-surface-container-high pl-12 pb-10">
+            <div class="absolute -left-[9px] top-7 w-4 h-4 rounded-full bg-primary ring-4 ring-white transition-transform group-hover:scale-125"></div>
+            <div class="p-6 rounded-2xl bg-surface-container-lowest border border-surface-container-high hover:border-primary transition-all shadow-sm group-hover:shadow-md">
+              <h4 class="text-lg font-bold mb-1">Novel Anti-Aging Therapies</h4>
+              <p class="text-on-surface-variant text-sm font-medium">Dr. G.K. Glen Alwin</p>
+              <p class="text-sm text-outline mt-1">Aesthetician Dermatologist Consultant; Medical Director, EW Clinic, Kota Kinabalu Sabah; Senior Consultant &amp; Trainer, European Wellness Academy</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-10 text-center">
+        <button id="show-more-day1" onclick="toggleMore(1)" class="px-10 py-4 border-2 border-primary text-primary font-bold rounded-xl hover:bg-primary/5 transition-all">Show More</button>
+      </div>
+    </div>
+
+    <!-- DAY 2 -->
+    <div id="day2-content" class="hidden">
+      <div class="space-y-0" id="day2-visible">
+        <!-- Session 1 -->
+        <div class="flex gap-8 group">
+          <div class="w-36 flex-shrink-0 text-right pt-6"><span class="font-bold text-primary text-base">09:00 – 09:15</span></div>
+          <div class="relative flex-grow border-l-2 border-surface-container-high pl-12 pb-10">
+            <div class="absolute -left-[9px] top-7 w-4 h-4 rounded-full bg-primary ring-4 ring-white transition-transform group-hover:scale-125"></div>
+            <div class="p-6 rounded-2xl bg-surface-container-lowest border border-surface-container-high hover:border-primary transition-all shadow-sm group-hover:shadow-md">
+              <h4 class="text-lg font-bold mb-1">Delegate Check-in</h4>
+              <p class="text-on-surface-variant text-sm">Conference registration and welcome.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Session 2 -->
+        <div class="flex gap-8 group">
+          <div class="w-36 flex-shrink-0 text-right pt-6"><span class="font-bold text-primary text-base">09:15 – 09:45</span></div>
+          <div class="relative flex-grow border-l-2 border-surface-container-high pl-12 pb-10">
+            <div class="absolute -left-[9px] top-7 w-4 h-4 rounded-full bg-primary ring-4 ring-white transition-transform group-hover:scale-125"></div>
+            <div class="p-6 rounded-2xl bg-surface-container-lowest border border-surface-container-high hover:border-primary transition-all shadow-sm group-hover:shadow-md">
+              <h4 class="text-lg font-bold mb-1">New Bio-Regenerative Approaches for Urolithiasis Prevention</h4>
+              <p class="text-on-surface-variant text-sm font-medium">Prof. Dr. Olha Nishkumai</p>
+              <p class="text-sm text-outline mt-1">Cardiologist &amp; Rheumatologist; Internal Medicine professor at BNMU, Kyiv, Ukraine; Sr. Medical Advisor, European Wellness Biomedical Group; Board Trainer, IBARM</p>
+            </div>
+          </div>
+        </div>
+        <!-- Session 3 -->
+        <div class="flex gap-8 group">
+          <div class="w-36 flex-shrink-0 text-right pt-6"><span class="font-bold text-primary text-base">09:45 – 10:45</span></div>
+          <div class="relative flex-grow border-l-2 border-surface-container-high pl-12 pb-10">
+            <div class="absolute -left-[9px] top-7 w-4 h-4 rounded-full bg-primary ring-4 ring-white transition-transform group-hover:scale-125"></div>
+            <div class="p-6 rounded-2xl bg-surface-container-lowest border border-surface-container-high hover:border-primary transition-all shadow-sm group-hover:shadow-md">
+              <h4 class="text-lg font-bold mb-1">Latest Updates in Management of Chronic Muscular-Skeletal Pain and Injuries</h4>
+              <p class="text-on-surface-variant text-sm font-medium">Prof. Dr. Dmytro Klokol</p>
+              <p class="text-sm text-outline mt-1">Group Medical Head, European Biomedical Group; Board Chair, IBARM; Medical Director (Regeneration), ESAAM</p>
+            </div>
+          </div>
+        </div>
+        <!-- Session 4 -->
+        <div class="flex gap-8 group">
+          <div class="w-36 flex-shrink-0 text-right pt-6"><span class="font-bold text-primary text-base">10:45 – 11:15</span></div>
+          <div class="relative flex-grow border-l-2 border-surface-container-high pl-12 pb-10">
+            <div class="absolute -left-[9px] top-7 w-4 h-4 rounded-full bg-primary ring-4 ring-white transition-transform group-hover:scale-125"></div>
+            <div class="p-6 rounded-2xl bg-surface-container-lowest border border-surface-container-high hover:border-primary transition-all shadow-sm group-hover:shadow-md">
+              <h4 class="text-lg font-bold mb-1">Integrative Medicine Education Research Needs &amp; Methodology</h4>
+              <p class="text-on-surface-variant text-sm font-medium">Dr. Bawani Nesamany</p>
+              <p class="text-sm text-outline mt-1">Academy Board Advisor, European Wellness Academy; Board Advisor, IBARM; Registered Complementary Medicine Practitioner (MOH T&amp;CM Council, Malaysia)</p>
+            </div>
+          </div>
+        </div>
+        <!-- Session 5 -->
+        <div class="flex gap-8 group">
+          <div class="w-36 flex-shrink-0 text-right pt-6"><span class="font-bold text-primary text-base">11:15 – 12:15</span></div>
+          <div class="relative flex-grow border-l-2 border-surface-container-high pl-12 pb-10">
+            <div class="absolute -left-[9px] top-7 w-4 h-4 rounded-full bg-primary ring-4 ring-white transition-transform group-hover:scale-125"></div>
+            <div class="p-6 rounded-2xl bg-surface-container-lowest border border-surface-container-high hover:border-primary transition-all shadow-sm group-hover:shadow-md">
+              <h4 class="text-lg font-bold mb-1">Cellular &amp; Peptides Therapies in Regenerative as Integrative Medicine — Case Study 1</h4>
+              <p class="text-on-surface-variant text-sm font-medium">Prof. Dato' Sri Dr. Mike Chan</p>
+              <p class="text-sm text-outline mt-1">Chairman, European Wellness Biomedical Group; Chairman (Asia) &amp; Head of Scientific Committee, ESAAM; Founder, IACT &amp; IASCT</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Day 2 Hidden Sessions -->
+      <div id="day2-extra" class="hidden space-y-0">
+        <!-- Session 6 - Buffet -->
+        <div class="flex gap-8 group">
+          <div class="w-36 flex-shrink-0 text-right pt-6"><span class="font-bold text-primary text-base">12:15 – 13:00</span></div>
+          <div class="relative flex-grow border-l-2 border-surface-container-high pl-12 pb-10">
+            <div class="absolute -left-[9px] top-7 w-4 h-4 rounded-full bg-surface-container-high ring-4 ring-white"></div>
+            <div class="p-6 rounded-2xl bg-surface-container border border-surface-container-high transition-all shadow-sm">
+              <h4 class="text-lg font-bold mb-1">🍽 Buffet Lunch</h4>
+              <p class="text-on-surface-variant text-sm">45-minute networking buffet</p>
+            </div>
+          </div>
+        </div>
+        <!-- Session 7 -->
+        <div class="flex gap-8 group">
+          <div class="w-36 flex-shrink-0 text-right pt-6"><span class="font-bold text-primary text-base">13:00 – 14:45</span></div>
+          <div class="relative flex-grow border-l-2 border-surface-container-high pl-12 pb-10">
+            <div class="absolute -left-[9px] top-7 w-4 h-4 rounded-full bg-primary ring-4 ring-white transition-transform group-hover:scale-125"></div>
+            <div class="p-6 rounded-2xl bg-surface-container-lowest border border-surface-container-high hover:border-primary transition-all shadow-sm group-hover:shadow-md">
+              <h4 class="text-lg font-bold mb-1">Peptides and Exosomes for the Face, Scalp &amp; Hair</h4>
+              <p class="text-on-surface-variant text-sm font-medium">Dr. G.K. Glen Alwin</p>
+              <p class="text-sm text-outline mt-1">Aesthetician Dermatologist Consultant; Medical Director, EW Clinic, Kota Kinabalu Sabah; Senior Consultant &amp; Trainer, European Wellness Academy</p>
+            </div>
+          </div>
+        </div>
+        <!-- Session 8 -->
+        <div class="flex gap-8 group">
+          <div class="w-36 flex-shrink-0 text-right pt-6"><span class="font-bold text-primary text-base">14:45 – 15:30</span></div>
+          <div class="relative flex-grow border-l-2 border-surface-container-high pl-12 pb-10">
+            <div class="absolute -left-[9px] top-7 w-4 h-4 rounded-full bg-primary ring-4 ring-white transition-transform group-hover:scale-125"></div>
+            <div class="p-6 rounded-2xl bg-surface-container-lowest border border-surface-container-high hover:border-primary transition-all shadow-sm group-hover:shadow-md">
+              <h4 class="text-lg font-bold mb-1">Novel and Research Peptides in Regenerative and Longevity Medicine</h4>
+              <p class="text-on-surface-variant text-sm font-medium">Prof. Dr. Dmytro Klokol</p>
+              <p class="text-sm text-outline mt-1">Group Medical Head, European Biomedical Group; Board Chair, IBARM; Medical Director (Regeneration), ESAAM</p>
+            </div>
+          </div>
+        </div>
+        <!-- Session 9 -->
+        <div class="flex gap-8 group">
+          <div class="w-36 flex-shrink-0 text-right pt-6"><span class="font-bold text-primary text-base">15:30 – 16:00</span></div>
+          <div class="relative flex-grow border-l-2 border-surface-container-high pl-12 pb-10">
+            <div class="absolute -left-[9px] top-7 w-4 h-4 rounded-full bg-primary ring-4 ring-white transition-transform group-hover:scale-125"></div>
+            <div class="p-6 rounded-2xl bg-surface-container-lowest border border-surface-container-high hover:border-primary transition-all shadow-sm group-hover:shadow-md">
+              <h4 class="text-lg font-bold mb-1">Bone Density and Beyond: Multidisciplinary Insights into Skeletal Health</h4>
+              <p class="text-on-surface-variant text-sm font-medium">Prof. Dr. Olha Nishkumai</p>
+              <p class="text-sm text-outline mt-1">Cardiologist &amp; Rheumatologist; Internal Medicine professor at BNMU, Kyiv, Ukraine; Sr. Medical Advisor, European Wellness Biomedical Group; Board Trainer, IBARM</p>
+            </div>
+          </div>
+        </div>
+        <!-- Session 10 -->
+        <div class="flex gap-8 group">
+          <div class="w-36 flex-shrink-0 text-right pt-6"><span class="font-bold text-primary text-base">16:00 – 16:30</span></div>
+          <div class="relative flex-grow border-l-2 border-surface-container-high pl-12 pb-10">
+            <div class="absolute -left-[9px] top-7 w-4 h-4 rounded-full bg-primary ring-4 ring-white transition-transform group-hover:scale-125"></div>
+            <div class="p-6 rounded-2xl bg-surface-container-lowest border border-surface-container-high hover:border-primary transition-all shadow-sm group-hover:shadow-md">
+              <h4 class="text-lg font-bold mb-1">Cellular &amp; Peptides Therapies in Regenerative as Integrative Medicine — Case Study 2</h4>
+              <p class="text-on-surface-variant text-sm font-medium">Prof. Dato' Sri Dr. Mike Chan</p>
+              <p class="text-sm text-outline mt-1">Chairman, European Wellness Biomedical Group; Chairman (Asia) &amp; Head of Scientific Committee, ESAAM; Founder, IACT &amp; IASCT</p>
+              <p class="text-sm text-outline mt-1">State Honors: Conferred the title Dato' Sri by the Sultan of Pahang, Malaysia, for his significant contributions to the medical field and the nation's healthcare profile.</p>
+              <p class="text-sm text-outline mt-1">Recipient of multiple "Lifetime Achievement Awards" for excellence in Medical Science and Bioregenerative Medicine.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Session 11 - Closing -->
+        <div class="flex gap-8 group">
+          <div class="w-36 flex-shrink-0 text-right pt-6"><span class="font-bold text-primary text-base">16:30 – 17:00</span></div>
+          <div class="relative flex-grow border-l-2 border-surface-container-high pl-12 pb-10">
+            <div class="absolute -left-[9px] top-7 w-4 h-4 rounded-full bg-primary ring-4 ring-white transition-transform group-hover:scale-125"></div>
+            <div class="p-6 rounded-2xl bg-surface-container-lowest border border-surface-container-high hover:border-primary transition-all shadow-sm group-hover:shadow-md">
+              <h4 class="text-lg font-bold mb-1">Closing Panel: Floor Opened to Questions</h4>
+              <p class="text-on-surface-variant text-sm">Moderated line-up of all speakers for open Q&amp;A.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-10 text-center">
+        <button id="show-more-day2" onclick="toggleMore(2)" class="px-10 py-4 border-2 border-primary text-primary font-bold rounded-xl hover:bg-primary/5 transition-all">Show More</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- END: Agenda Section -->
+
+<script>
+  function switchDay(day) {
+    document.getElementById('day1-content').classList.toggle('hidden', day !== 1);
+    document.getElementById('day2-content').classList.toggle('hidden', day !== 2);
+    const btn1 = document.getElementById('btn-day1');
+    const btn2 = document.getElementById('btn-day2');
+    if (day === 1) {
+      btn1.className = 'px-10 py-3 rounded-xl font-bold text-lg bg-primary text-white shadow-lg transition-all';
+      btn2.className = 'px-10 py-3 rounded-xl font-bold text-lg border-2 border-primary text-primary hover:bg-primary/5 transition-all';
+    } else {
+      btn2.className = 'px-10 py-3 rounded-xl font-bold text-lg bg-primary text-white shadow-lg transition-all';
+      btn1.className = 'px-10 py-3 rounded-xl font-bold text-lg border-2 border-primary text-primary hover:bg-primary/5 transition-all';
+    }
+  }
+
+  function toggleMore(day) {
+    const extra = document.getElementById('day' + day + '-extra');
+    const btn = document.getElementById('show-more-day' + day);
+    const isHidden = extra.classList.toggle('hidden');
+    btn.textContent = isHidden ? 'Show More' : 'Show Less';
+  }
+</script>
+
+<!-- BEGIN: Abstract Competition -->
+<section class="py-32 bg-surface-container-low">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="bg-white rounded-[3rem] p-16 shadow-2xl flex flex-wrap lg:flex-nowrap items-center gap-16 border border-surface-container-high">
+      <div class="lg:w-1/2 space-y-8">
+        <span class="inline-block bg-primary/10 text-primary px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-widest">For Every Stage of the Journey</span>
+        <h2 class="text-6xl font-black leading-tight text-on-surface">Advance Your <span class="text-primary">Medical Journey</span></h2>
+        <p class="text-on-surface-variant text-xl leading-relaxed">Designed for every stage of the medical journey — from students to experienced clinicians — this event unlocks opportunities to learn, present, and grow in regenerative medicine and longevity science.</p>
+        <ul class="space-y-5">
+          <li class="flex items-start gap-4 text-on-surface">
+            <div class="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path></svg>
+            </div>
+            <div><span class="font-bold">For Doctors:</span> Gain clinical insights, discover emerging therapies, and connect with global experts for collaboration.</div>
+          </li>
+          <li class="flex items-start gap-4 text-on-surface">
+            <div class="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path></svg>
+            </div>
+            <div><span class="font-bold">For PG Students:</span> Present research, receive expert feedback, and unlock publication and fellowship opportunities.</div>
+          </li>
+          <li class="flex items-start gap-4 text-on-surface">
+            <div class="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path></svg>
+            </div>
+            <div><span class="font-bold">For UG Students:</span> Explore cutting-edge fields, learn from leaders, and build early exposure in regenerative medicine.</div>
+          </li>
+        </ul>
+        <div class="pt-10">
+          <a class="bg-primary text-white px-12 py-5 rounded-2xl font-black text-xl inline-block hover:shadow-2xl hover:-translate-y-1 transition-all" href="#tickets">Join the Experience</a>
+        </div>
+      </div>
+      <div class="lg:w-1/2 relative">
+        <div class="absolute -inset-4 bg-primary/5 rounded-[2.5rem] blur-2xl"></div>
+        <img alt="Medical Research" class="relative rounded-[2rem] shadow-2xl w-full object-cover aspect-video border-8 border-surface-container" src="hero-background.jpg"/>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- END: Abstract Competition -->
+
+<!-- BEGIN: Trusted Wall -->
+<section class="bg-white border-t border-surface-container-high py-32">
+  <div class="max-w-7xl mx-auto px-4">
+    <h3 class="text-on-surface text-center text-3xl font-bold mb-20 opacity-80">Accredited by Global Medical Elites</h3>
+    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-x-12 gap-y-16 opacity-40 grayscale">
+      <div class="flex items-center justify-center h-12 text-on-surface"><span class="text-2xl font-black">HARVARD</span></div>
+      <div class="flex items-center justify-center h-12 text-on-surface"><span class="text-2xl font-black">JOHNS HOPKINS</span></div>
+      <div class="flex items-center justify-center h-12 text-on-surface"><span class="text-2xl font-black">MAYO CLINIC</span></div>
+      <div class="flex items-center justify-center h-12 text-on-surface"><span class="text-2xl font-black">WHO</span></div>
+      <div class="flex items-center justify-center h-12 text-on-surface"><span class="text-2xl font-black">CDC</span></div>
+      <div class="flex items-center justify-center h-12 text-on-surface"><span class="text-2xl font-black">CLEVELAND CLINIC</span></div>
+      <div class="flex items-center justify-center h-12 text-on-surface"><span class="text-2xl font-black">GSK</span></div>
+      <div class="flex items-center justify-center h-12 text-on-surface"><span class="text-2xl font-black">ABBOTT</span></div>
+      <div class="flex items-center justify-center h-12 text-on-surface"><span class="text-2xl font-black">ROCHE</span></div>
+      <div class="flex items-center justify-center h-12 text-on-surface"><span class="text-2xl font-black">MERCK</span></div>
+      <div class="flex items-center justify-center h-12 text-on-surface"><span class="text-2xl font-black">SANOFI</span></div>
+      <div class="flex items-center justify-center h-12 text-on-surface"><span class="text-2xl font-black">NOVARTIS</span></div>
+    </div>
+  </div>
+</section>
+<!-- END: Trusted Wall -->
+
+<!-- BEGIN: FAQ -->
+<section class="py-32 bg-surface-container-low">
+  <div class="max-w-5xl mx-auto px-4">
+    <div class="grid lg:grid-cols-5 gap-16">
+      <div class="lg:col-span-2">
+        <h2 class="text-5xl font-black mb-8 leading-tight text-on-surface">FAQ</h2>
+        <p class="text-on-surface-variant text-lg mb-10 leading-relaxed">For inquiries regarding institutional grants or CME accreditation, contact our delegate support.</p>
+        <a class="inline-flex items-center gap-3 bg-primary text-white px-8 py-4 rounded-xl font-bold hover:bg-primary-container transition-all shadow-md" href="#">Contact Support →</a>
+      </div>
+      <div class="lg:col-span-3 space-y-5">
+        <!-- FAQ 1 -->
+        <div class="p-6 bg-white rounded-2xl border border-surface-container-high hover:border-primary transition-all group">
+          <button class="flex justify-between items-center w-full text-left font-bold text-lg text-on-surface">
+            <span>Are CME/CPD credits available?</span>
+            <span class="material-symbols-outlined text-primary group-hover:rotate-180 transition-transform">expand_more</span>
+          </button>
+          <div class="mt-4 text-on-surface-variant leading-relaxed max-h-0 overflow-hidden group-hover:max-h-40 transition-all duration-300">
+            Yes, the symposium is accredited for CME and CPD credits. Certificates will be issued to all eligible attendees upon completion of the post-event evaluation.
+          </div>
+        </div>
+        <!-- FAQ 2 -->
+        <div class="p-6 bg-white rounded-2xl border border-surface-container-high hover:border-primary transition-all group">
+          <button class="flex justify-between items-center w-full text-left font-bold text-lg text-on-surface">
+            <span>What is included in the registration fee?</span>
+            <span class="material-symbols-outlined text-primary group-hover:rotate-180 transition-transform">expand_more</span>
+          </button>
+          <div class="mt-4 text-on-surface-variant leading-relaxed max-h-0 overflow-hidden group-hover:max-h-40 transition-all duration-300">
+            Fees cover full access to all sessions, workshops, lunch, networking dinners, and digital conference materials.
+          </div>
+        </div>
+        <!-- FAQ 3 -->
+        <div class="p-6 bg-white rounded-2xl border border-surface-container-high hover:border-primary transition-all group">
+          <button class="flex justify-between items-center w-full text-left font-bold text-lg text-on-surface">
+            <span>What is the cancellation/refund policy?</span>
+            <span class="material-symbols-outlined text-primary group-hover:rotate-180 transition-transform">expand_more</span>
+          </button>
+          <div class="mt-4 text-on-surface-variant leading-relaxed max-h-0 overflow-hidden group-hover:max-h-40 transition-all duration-300">
+            Cancellations made 30 days prior to the event are eligible for a full refund minus a small administrative fee.
+          </div>
+        </div>
+        <!-- FAQ 4+ hidden -->
+        <div class="hidden space-y-5" id="faq-extra">
+          <div class="p-6 bg-white rounded-2xl border border-surface-container-high hover:border-primary transition-all group">
+            <button class="flex justify-between items-center w-full text-left font-bold text-lg text-on-surface">
+              <span>Is there a group discount for institutions?</span>
+              <span class="material-symbols-outlined text-primary group-hover:rotate-180 transition-transform">expand_more</span>
+            </button>
+            <div class="mt-4 text-on-surface-variant leading-relaxed max-h-0 overflow-hidden group-hover:max-h-40 transition-all duration-300">
+              Yes, institutional groups of 10 or more are eligible for grant-funded discounts. Please contact our registrar for details.
+            </div>
+          </div>
+          <div class="p-6 bg-white rounded-2xl border border-surface-container-high hover:border-primary transition-all group">
+            <button class="flex justify-between items-center w-full text-left font-bold text-lg text-on-surface">
+              <span>Details &amp; Logistics</span>
+              <span class="material-symbols-outlined text-primary group-hover:rotate-180 transition-transform">expand_more</span>
+            </button>
+            <div class="mt-4 text-on-surface-variant leading-relaxed max-h-0 overflow-hidden group-hover:max-h-40 transition-all duration-300">
+              Further logistical details including hotel booking codes and travel grants will be shared via email with registered delegates.
+            </div>
+          </div>
+        </div>
+        <div class="pt-4">
+          <button class="text-primary font-bold flex items-center gap-2 hover:gap-3 transition-all" id="show-faq">
+            Show More <span class="material-symbols-outlined">keyboard_double_arrow_down</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- END: FAQ -->
+
+<!-- BEGIN: Footer -->
+<footer class="bg-surface-container-low border-t border-surface-container-high pt-20 pb-10">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="flex flex-col lg:flex-row justify-between gap-12 mb-16">
+      <!-- Brand — left -->
+      <div class="lg:w-1/2">
+        <img alt="MEDICREATIVE Logo" class="h-24 w-auto object-contain mb-4 -ml-24" src="logo.png"/>
+        <p class="text-on-surface-variant text-sm leading-snug max-w-xs">Advancing medical frontiers through<br/>interdisciplinary clinical research and<br/>cutting-edge healthcare delivery.</p>
+      </div>
+      <!-- Quick Links + Contact — right end -->
+      <div class="flex gap-16 lg:justify-end">
+        <div>
+          <h4 class="font-bold text-on-surface mb-6 uppercase tracking-widest text-xs">Quick Links</h4>
+          <ul class="space-y-4">
+            <li><a class="text-on-surface-variant hover:text-primary transition-colors text-sm" href="#speakers">Speakers</a></li>
+            <li><a class="text-on-surface-variant hover:text-primary transition-colors text-sm" href="#agenda">Agenda</a></li>
+            <li><a class="text-on-surface-variant hover:text-primary transition-colors text-sm" href="#tickets">Tickets</a></li>
+            <li><a class="text-on-surface-variant hover:text-primary transition-colors text-sm" href="#">Sponsors</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold text-on-surface mb-6 uppercase tracking-widest text-xs">Contact Support</h4>
+          <div class="space-y-4">
+            <div class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-primary">mail</span>
+              <a class="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium" href="mailto:registrar@medicreative.com">registrar@medicreative.com</a>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-primary">location_on</span>
+              <p class="text-on-surface-variant text-sm leading-relaxed">Pullman Chennai, Anna Salai,<br/>Chennai, India</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pt-8 border-t border-surface-container-high flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="text-outline text-xs">© 2024 MediCreative Symposium. All rights reserved.</p>
+      <div class="flex gap-6">
+        <a class="text-outline hover:text-primary transition-colors text-xs font-medium" href="#">Privacy Policy</a>
+        <a class="text-outline hover:text-primary transition-colors text-xs font-medium" href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- END: Footer -->
+
+<script>
+  document.getElementById('show-faq')?.addEventListener('click', function() {
+    const extra = document.getElementById('faq-extra');
+    if (extra) {
+      extra.classList.toggle('hidden');
+      this.innerHTML = extra.classList.contains('hidden') ?
+        'Show More <span class="material-symbols-outlined">keyboard_double_arrow_down</span>' :
+        'Show Less <span class="material-symbols-outlined">keyboard_double_arrow_up</span>';
+    }
+  });
+</script>
+
+</body>
+</html>
