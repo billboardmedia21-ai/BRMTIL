@@ -106,6 +106,23 @@
     }
     #faq-extra.hidden { display: none; }
 
+    /* Animated gradient border for featured speaker */
+    @property --border-angle {
+      syntax: '<angle>';
+      initial-value: 0deg;
+      inherits: false;
+    }
+    .featured-card {
+      background:
+        linear-gradient(#f4fffe, #f4fffe) padding-box,
+        conic-gradient(from var(--border-angle), #00685d 0%, #70d8c8 30%, #aef4e9 50%, #70d8c8 70%, #00685d 100%) border-box;
+      border: 2px solid transparent;
+      animation: border-spin 4s linear infinite;
+    }
+    @keyframes border-spin {
+      to { --border-angle: 360deg; }
+    }
+
     /* Agenda timeline — stack on mobile */
     @media (max-width: 639px) {
       #agenda .group { flex-direction: column; gap: 0.25rem; }
@@ -257,61 +274,17 @@
       <p class="text-xl text-on-surface-variant max-w-2xl mx-auto">The world's leading medical authorities sharing research that defines the future of healthcare.</p>
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 max-w-7xl mx-auto">
-      <!-- Speaker 1 -->
-      <div class="group speaker-card">
-        <div class="relative aspect-[4/5] rounded-3xl overflow-hidden mb-6 shadow-md bg-surface-container">
-          <img alt="Dr. V.N. Selvam" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="selvam.jpg"/>
-        </div>
-        <h4 class="font-bold text-xl mb-1 text-on-surface">Dr. V.N. Selvam</h4>
-        <p class="text-on-surface-variant mb-1">Medical Director & Senior Consultant</p>
-        <p class="text-sm font-bold text-primary uppercase tracking-wider">Vinayaka Mission's Superspeciality Hospital</p>
-      </div>
-      <!-- Speaker 2 -->
-      <div class="group speaker-card">
-        <div class="relative aspect-[4/5] rounded-3xl overflow-hidden mb-6 shadow-md bg-surface-container">
-          <img alt="Prof. Dr. S. Ravikumar" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="ravikumar.jpg"/>
-        </div>
-        <h4 class="font-bold text-xl mb-1 text-on-surface">Prof. Dr. S. Ravikumar</h4>
-        <p class="text-on-surface-variant mb-1">Assistant Director of Research</p>
-        <p class="text-sm font-bold text-primary uppercase tracking-wider">VMRF-DU & AVMC&H Puducherry</p>
-      </div>
-      <!-- Speaker 3 -->
-      <div class="group speaker-card">
-        <div class="relative aspect-[4/5] rounded-3xl overflow-hidden mb-6 shadow-md bg-surface-container">
+      <!-- Speaker 1 — Dr. Mike Chan (Featured) -->
+      <div class="group speaker-card featured-card relative rounded-3xl p-4 shadow-xl">
+        <div class="absolute top-0 right-0 bg-primary text-white text-[10px] font-black uppercase tracking-widest px-4 py-1.5 rounded-tr-3xl rounded-bl-2xl z-10">Featured Speaker</div>
+        <div class="relative aspect-[4/5] rounded-2xl overflow-hidden mb-4 shadow-md bg-surface-container">
           <img alt="Prof. Dato' Sri Dr. Mike Chan" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="mikechan.jpg"/>
         </div>
         <h4 class="font-bold text-xl mb-1 text-on-surface">Prof. Dato' Sri Dr. Mike Chan</h4>
         <p class="text-on-surface-variant mb-1">Chairman & Scientist, Regenerative Medicine</p>
         <p class="text-sm font-bold text-primary uppercase tracking-wider">European Wellness Academy</p>
       </div>
-      <!-- Speaker 4 -->
-      <div class="group speaker-card">
-        <div class="relative aspect-[4/5] rounded-3xl overflow-hidden mb-6 shadow-md bg-surface-container">
-          <img alt="Dr. Prabhu Kumar Raju" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="prabhukumar.jpg"/>
-        </div>
-        <h4 class="font-bold text-xl mb-1 text-on-surface">Dr. Prabhu Kumar Raju</h4>
-        <p class="text-on-surface-variant mb-1">Regenerative Medicine Expert</p>
-        <p class="text-sm font-bold text-primary uppercase tracking-wider">Medical Director at Somnifera Wellness</p>
-      </div>
-      <!-- Speaker 5 -->
-      <div class="group speaker-card">
-        <div class="relative aspect-[4/5] rounded-3xl overflow-hidden mb-6 shadow-md bg-surface-container">
-          <img alt="Dr. G.K. Glen Alwin" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="glenalwin.jpg"/>
-        </div>
-        <h4 class="font-bold text-xl mb-1 text-on-surface">Dr. G.K. Glen Alwin</h4>
-        <p class="text-on-surface-variant mb-1">Medical Director</p>
-        <p class="text-sm font-bold text-primary uppercase tracking-wider">EW Clinic, Kota Kinabalu Sabah</p>
-      </div>
-      <!-- Speaker 6 -->
-      <div class="group speaker-card">
-        <div class="relative aspect-[4/5] rounded-3xl overflow-hidden mb-6 shadow-md bg-surface-container">
-          <img alt="Prof. Dr. Olha Nishkumai" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="olha.jpg"/>
-        </div>
-        <h4 class="font-bold text-xl mb-1 text-on-surface">Prof. Dr. Olha Nishkumai</h4>
-        <p class="text-on-surface-variant mb-1">Cardiologist & Rheumatologist</p>
-        <p class="text-sm font-bold text-primary uppercase tracking-wider">European Wellness Academy</p>
-      </div>
-      <!-- Speaker 7 -->
+      <!-- Speaker 2 -->
       <div class="group speaker-card">
         <div class="relative aspect-[4/5] rounded-3xl overflow-hidden mb-6 shadow-md bg-surface-container">
           <img alt="Prof. Dr. Dmytro Klokol" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="dmytro.jpg"/>
@@ -320,7 +293,25 @@
         <p class="text-on-surface-variant mb-1">Medical Head & General Surgeon</p>
         <p class="text-sm font-bold text-primary uppercase tracking-wider">European Wellness Academy</p>
       </div>
-      <!-- Speaker 8 -->
+      <!-- Speaker 3 -->
+      <div class="group speaker-card">
+        <div class="relative aspect-[4/5] rounded-3xl overflow-hidden mb-6 shadow-md bg-surface-container">
+          <img alt="Prof. Dr. Olha Nishkumai" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="olha.jpg"/>
+        </div>
+        <h4 class="font-bold text-xl mb-1 text-on-surface">Prof. Dr. Olha Nishkumai</h4>
+        <p class="text-on-surface-variant mb-1">Cardiologist & Rheumatologist</p>
+        <p class="text-sm font-bold text-primary uppercase tracking-wider">European Wellness Academy</p>
+      </div>
+      <!-- Speaker 4 -->
+      <div class="group speaker-card">
+        <div class="relative aspect-[4/5] rounded-3xl overflow-hidden mb-6 shadow-md bg-surface-container">
+          <img alt="Dr. G.K. Glen Alwin" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="glenalwin.jpg"/>
+        </div>
+        <h4 class="font-bold text-xl mb-1 text-on-surface">Dr. G.K. Glen Alwin</h4>
+        <p class="text-on-surface-variant mb-1">Medical Director</p>
+        <p class="text-sm font-bold text-primary uppercase tracking-wider">EW Clinic, Kota Kinabalu Sabah</p>
+      </div>
+      <!-- Speaker 5 -->
       <div class="group speaker-card">
         <div class="relative aspect-[4/5] rounded-3xl overflow-hidden mb-6 shadow-md bg-surface-container">
           <img alt="Dr. Bawani Nesamany" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="bawani.jpg"/>
@@ -328,6 +319,33 @@
         <h4 class="font-bold text-xl mb-1 text-on-surface">Dr. Bawani Nesamany</h4>
         <p class="text-on-surface-variant mb-1">Academy Board Advisor</p>
         <p class="text-sm font-bold text-primary uppercase tracking-wider">European Wellness Academy</p>
+      </div>
+      <!-- Speaker 6 -->
+      <div class="group speaker-card">
+        <div class="relative aspect-[4/5] rounded-3xl overflow-hidden mb-6 shadow-md bg-surface-container">
+          <img alt="Dr. Prabhu Kumar Raju" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="prabhukumar.jpg"/>
+        </div>
+        <h4 class="font-bold text-xl mb-1 text-on-surface">Dr. Prabhu Kumar Raju</h4>
+        <p class="text-on-surface-variant mb-1">Regenerative Medicine Expert</p>
+        <p class="text-sm font-bold text-primary uppercase tracking-wider">Medical Director at Somnifera Wellness</p>
+      </div>
+      <!-- Speaker 7 -->
+      <div class="group speaker-card">
+        <div class="relative aspect-[4/5] rounded-3xl overflow-hidden mb-6 shadow-md bg-surface-container">
+          <img alt="Dr. V.N. Selvam" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="selvam.jpg"/>
+        </div>
+        <h4 class="font-bold text-xl mb-1 text-on-surface">Dr. V.N. Selvam</h4>
+        <p class="text-on-surface-variant mb-1">Medical Director & Senior Consultant</p>
+        <p class="text-sm font-bold text-primary uppercase tracking-wider">Vinayaka Mission's Superspeciality Hospital</p>
+      </div>
+      <!-- Speaker 8 -->
+      <div class="group speaker-card">
+        <div class="relative aspect-[4/5] rounded-3xl overflow-hidden mb-6 shadow-md bg-surface-container">
+          <img alt="Prof. Dr. S. Ravikumar" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="ravikumar.jpg"/>
+        </div>
+        <h4 class="font-bold text-xl mb-1 text-on-surface">Prof. Dr. S. Ravikumar</h4>
+        <p class="text-on-surface-variant mb-1">Assistant Director of Research</p>
+        <p class="text-sm font-bold text-primary uppercase tracking-wider">VMRF-DU & AVMC&H Puducherry</p>
       </div>
     </div>
   </div>
