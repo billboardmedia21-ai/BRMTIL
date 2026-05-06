@@ -114,7 +114,7 @@
     }
     .featured-card {
       padding: 2px;
-      background: conic-gradient(from var(--border-angle), #00685d 0%, #70d8c8 30%, #aef4e9 50%, #70d8c8 70%, #00685d 100%);
+      background: conic-gradient(from var(--border-angle), #00685d 0%, #52b788 25%, #c8e600 50%, #ffd700 65%, #52b788 80%, #00685d 100%);
       animation: border-spin 4s linear infinite;
     }
     .featured-inner {
@@ -125,6 +125,23 @@
     }
     @keyframes border-spin {
       to { --border-angle: 360deg; }
+    }
+
+    /* CTA button animated gradient border */
+    @property --cta-angle {
+      syntax: '<angle>';
+      initial-value: 0deg;
+      inherits: false;
+    }
+    .cta-btn {
+      background:
+        linear-gradient(white, white) padding-box,
+        conic-gradient(from var(--cta-angle), #00685d 0%, #52b788 25%, #c8e600 50%, #ffd700 65%, #52b788 80%, #00685d 100%) border-box;
+      border: 2px solid transparent;
+      animation: cta-spin 3s linear infinite;
+    }
+    @keyframes cta-spin {
+      to { --cta-angle: 360deg; }
     }
 
     /* Agenda timeline — stack on mobile */
@@ -180,30 +197,26 @@
   <div class="relative z-10 max-w-7xl mx-auto px-4 text-center">
     <img alt="BRMTIL MCHENNAI 2026 Logo" class="w-full mx-auto h-auto object-contain mb-10 drop-shadow-2xl max-w-[110rem] block" src="hero-bg.png"/>
     <div class="max-w-3xl mx-auto mb-10">
-      <!-- Decorative gradient line -->
-      <div class="flex justify-center mb-5">
-        <div class="h-0.5 w-14 rounded-full" style="background: linear-gradient(to right, transparent, #70d8c8, transparent)"></div>
-      </div>
       <!-- Event details bar -->
-      <div class="bg-black/30 backdrop-blur-md rounded-2xl px-6 py-4 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-0">
-        <div class="flex items-center gap-2.5 sm:px-8">
+      <div class="bg-black/30 backdrop-blur-md rounded-2xl px-6 py-4 flex flex-row items-center justify-evenly w-full">
+        <div class="flex items-center gap-2.5">
           <span class="material-symbols-outlined text-[#70d8c8] text-xl">location_on</span>
-          <span class="text-white font-bold text-sm">Pullman Chennai</span><span class="text-white/60 text-sm">,&nbsp;Anna Salai</span>
+          <span class="text-white font-bold text-sm">Pullman Chennai</span><span class="text-white/60 text-sm hidden sm:inline">,&nbsp;Anna Salai</span>
         </div>
-        <div class="hidden sm:block w-px h-5 bg-white/20 flex-shrink-0"></div>
-        <div class="flex items-center gap-2.5 sm:px-8">
+        <div class="w-px h-5 bg-white/20 flex-shrink-0"></div>
+        <div class="flex items-center gap-2.5">
           <span class="material-symbols-outlined text-[#70d8c8] text-xl">calendar_month</span>
           <span class="text-white font-bold text-sm">19 – 20 June 2026</span>
         </div>
-        <div class="hidden sm:block w-px h-5 bg-white/20 flex-shrink-0"></div>
-        <div class="flex items-center gap-2.5 sm:px-8">
+        <div class="w-px h-5 bg-white/20 flex-shrink-0"></div>
+        <div class="flex items-center gap-2.5">
           <span class="material-symbols-outlined text-[#70d8c8] text-xl">schedule</span>
           <span class="text-white text-sm">8:30 AM – 5:00 PM</span>
         </div>
       </div>
     </div>
     <div class="flex flex-wrap justify-center gap-5 mb-10">
-      <a class="border-2 border-outline-variant text-on-surface px-10 py-4 rounded-xl font-bold text-lg hover:bg-surface-variant hover:border-primary hover:text-primary transition-all" href="#tickets">Secure Your Pass Now →</a>
+      <a class="cta-btn text-primary px-6 py-2.5 rounded-xl font-semibold text-base hover:bg-surface-variant transition-all" href="#tickets">Secure Your Pass Now →</a>
     </div>
     <!-- Featured Logos -->
     <div class="pt-8 border-t border-surface-container-high">
@@ -235,7 +248,7 @@
       </h2>
       <p class="text-lg md:text-xl text-on-surface-variant mb-10 leading-relaxed font-medium">Reimagining the future of health through breakthroughs in regenerative medicine and longevity science. Join global leaders, researchers, and innovators shaping the next era of human lifespan and vitality. Discover ideas, technologies, and conversations that are redefining how we heal, age, and thrive.</p>
       <div class="flex justify-center gap-4">
-        <a class="border-2 border-primary text-primary px-10 py-3.5 rounded-xl font-bold text-lg hover:bg-primary/5 transition-all shadow-sm" href="#tickets">
+        <a class="border-2 border-primary text-primary px-6 py-2.5 rounded-xl font-semibold text-sm hover:bg-primary/5 transition-all shadow-sm" href="#tickets">
           Learn More about Event
         </a>
       </div>
@@ -293,72 +306,96 @@
             <img alt="Prof. Dato' Sri Dr. Mike Chan" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" style="object-position: center 5%" src="mikechan.jpg"/>
           </div>
           <h4 class="font-bold text-xl mb-1 text-on-surface">Prof. Dato' Sri Dr. Mike Chan</h4>
-          <p class="text-on-surface-variant mb-1">Chairman & Scientist, Regenerative Medicine</p>
-          <p class="text-sm font-bold text-primary uppercase tracking-wider">European Wellness Academy</p>
+          <p class="text-on-surface-variant text-sm mb-2">Chairman & Scientist, Regenerative Medicine</p>
+          <div class="flex items-center gap-2 flex-wrap">
+            <span class="text-[11px] font-bold bg-primary/10 text-primary px-2.5 py-0.5 rounded-full">🇲🇾 Malaysia</span>
+            <span class="text-[11px] text-on-surface-variant">European Wellness Biomedical Group</span>
+          </div>
         </div>
       </div>
-      <!-- Speaker 2 -->
+      <!-- Speaker 2 — Dmytro Klokol -->
       <div class="group speaker-card">
-        <div class="relative aspect-[4/5] rounded-3xl overflow-hidden mb-6 shadow-md bg-surface-container">
+        <div class="relative aspect-[4/5] rounded-3xl overflow-hidden mb-4 shadow-md bg-surface-container">
           <img alt="Prof. Dr. Dmytro Klokol" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="dmytro.jpg"/>
         </div>
         <h4 class="font-bold text-xl mb-1 text-on-surface">Prof. Dr. Dmytro Klokol</h4>
-        <p class="text-on-surface-variant mb-1">Medical Head & General Surgeon</p>
-        <p class="text-sm font-bold text-primary uppercase tracking-wider">European Wellness Academy</p>
+        <p class="text-on-surface-variant text-sm mb-2">Medical Head & General Surgeon</p>
+        <div class="flex items-center gap-2 flex-wrap">
+          <span class="text-[11px] font-bold bg-primary/10 text-primary px-2.5 py-0.5 rounded-full">🇺🇦 Ukraine</span>
+          <span class="text-[11px] text-on-surface-variant">European Wellness Biomedical Group</span>
+        </div>
       </div>
-      <!-- Speaker 3 -->
+      <!-- Speaker 3 — Olha Nishkumai -->
       <div class="group speaker-card">
-        <div class="relative aspect-[4/5] rounded-3xl overflow-hidden mb-6 shadow-md bg-surface-container">
-          <img alt="Prof. Dr. Olha Nishkumai" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="olha.jpg"/>
+        <div class="relative aspect-[4/5] rounded-3xl overflow-hidden mb-4 shadow-md bg-surface-container">
+          <img alt="Prof. Dr. Olha Nishkumai" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" style="object-position: center 15%" src="olha.jpg"/>
         </div>
         <h4 class="font-bold text-xl mb-1 text-on-surface">Prof. Dr. Olha Nishkumai</h4>
-        <p class="text-on-surface-variant mb-1">Cardiologist & Rheumatologist</p>
-        <p class="text-sm font-bold text-primary uppercase tracking-wider">European Wellness Academy</p>
+        <p class="text-on-surface-variant text-sm mb-2">Cardiologist & Rheumatologist</p>
+        <div class="flex items-center gap-2 flex-wrap">
+          <span class="text-[11px] font-bold bg-primary/10 text-primary px-2.5 py-0.5 rounded-full">🇺🇦 Ukraine</span>
+          <span class="text-[11px] text-on-surface-variant">European Wellness Biomedical Group</span>
+        </div>
       </div>
-      <!-- Speaker 4 -->
+      <!-- Speaker 4 — Glen Alwin -->
       <div class="group speaker-card">
-        <div class="relative aspect-[4/5] rounded-3xl overflow-hidden mb-6 shadow-md bg-surface-container">
-          <img alt="Dr. G.K. Glen Alwin" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="glenalwin.jpg"/>
+        <div class="relative aspect-[4/5] rounded-3xl overflow-hidden mb-4 shadow-md bg-surface-container">
+          <img alt="Dr. G.K. Glen Alwin" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" style="object-position: center 15%" src="glenalwin.jpg"/>
         </div>
         <h4 class="font-bold text-xl mb-1 text-on-surface">Dr. G.K. Glen Alwin</h4>
-        <p class="text-on-surface-variant mb-1">Medical Director</p>
-        <p class="text-sm font-bold text-primary uppercase tracking-wider">EW Clinic, Kota Kinabalu Sabah</p>
+        <p class="text-on-surface-variant text-sm mb-2">Medical Director</p>
+        <div class="flex items-center gap-2 flex-wrap">
+          <span class="text-[11px] font-bold bg-primary/10 text-primary px-2.5 py-0.5 rounded-full">🇲🇾 Malaysia</span>
+          <span class="text-[11px] text-on-surface-variant">EW Clinic, Kota Kinabalu Sabah</span>
+        </div>
       </div>
-      <!-- Speaker 5 -->
+      <!-- Speaker 5 — Bawani Nesamany -->
       <div class="group speaker-card">
-        <div class="relative aspect-[4/5] rounded-3xl overflow-hidden mb-6 shadow-md bg-surface-container">
-          <img alt="Dr. Bawani Nesamany" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="bawani.jpg"/>
+        <div class="relative aspect-[4/5] rounded-3xl overflow-hidden mb-4 shadow-md bg-surface-container">
+          <img alt="Dr. Bawani Nesamany" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" src="bawani.jpg"/>
         </div>
         <h4 class="font-bold text-xl mb-1 text-on-surface">Dr. Bawani Nesamany</h4>
-        <p class="text-on-surface-variant mb-1">Academy Board Advisor</p>
-        <p class="text-sm font-bold text-primary uppercase tracking-wider">European Wellness Academy</p>
+        <p class="text-on-surface-variant text-sm mb-2">Academy Board Advisor</p>
+        <div class="flex items-center gap-2 flex-wrap">
+          <span class="text-[11px] font-bold bg-primary/10 text-primary px-2.5 py-0.5 rounded-full">🇲🇾 Malaysia</span>
+          <span class="text-[11px] text-on-surface-variant">European Wellness Biomedical Group</span>
+        </div>
       </div>
-      <!-- Speaker 6 -->
+      <!-- Speaker 6 — Prabhu Kumar Raju -->
       <div class="group speaker-card">
-        <div class="relative aspect-[4/5] rounded-3xl overflow-hidden mb-6 shadow-md bg-surface-container">
-          <img alt="Dr. Prabhu Kumar Raju" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="prabhukumar.jpg"/>
+        <div class="relative aspect-[4/5] rounded-3xl overflow-hidden mb-4 shadow-md bg-surface-container">
+          <img alt="Dr. Prabhu Kumar Raju" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" src="prabhukumar.jpg"/>
         </div>
         <h4 class="font-bold text-xl mb-1 text-on-surface">Dr. Prabhu Kumar Raju</h4>
-        <p class="text-on-surface-variant mb-1">Regenerative Medicine Expert</p>
-        <p class="text-sm font-bold text-primary uppercase tracking-wider">Medical Director at Somnifera Wellness</p>
+        <p class="text-on-surface-variant text-sm mb-2">Regenerative Medicine Expert</p>
+        <div class="flex items-center gap-2 flex-wrap">
+          <span class="text-[11px] font-bold bg-primary/10 text-primary px-2.5 py-0.5 rounded-full">🇮🇳 India</span>
+          <span class="text-[11px] text-on-surface-variant">Somnifera Wellness</span>
+        </div>
       </div>
-      <!-- Speaker 7 -->
+      <!-- Speaker 7 — V.N. Selvam -->
       <div class="group speaker-card">
-        <div class="relative aspect-[4/5] rounded-3xl overflow-hidden mb-6 shadow-md bg-surface-container">
+        <div class="relative aspect-[4/5] rounded-3xl overflow-hidden mb-4 shadow-md bg-surface-container">
           <img alt="Dr. V.N. Selvam" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="selvam.jpg"/>
         </div>
         <h4 class="font-bold text-xl mb-1 text-on-surface">Dr. V.N. Selvam</h4>
-        <p class="text-on-surface-variant mb-1">Medical Director & Senior Consultant</p>
-        <p class="text-sm font-bold text-primary uppercase tracking-wider">Vinayaka Mission's Superspeciality Hospital</p>
+        <p class="text-on-surface-variant text-sm mb-2">Medical Director & Senior Consultant</p>
+        <div class="flex items-center gap-2 flex-wrap">
+          <span class="text-[11px] font-bold bg-primary/10 text-primary px-2.5 py-0.5 rounded-full">🇮🇳 India</span>
+          <span class="text-[11px] text-on-surface-variant">VMSH, Puducherry</span>
+        </div>
       </div>
-      <!-- Speaker 8 -->
+      <!-- Speaker 8 — S. Ravikumar -->
       <div class="group speaker-card">
-        <div class="relative aspect-[4/5] rounded-3xl overflow-hidden mb-6 shadow-md bg-surface-container">
+        <div class="relative aspect-[4/5] rounded-3xl overflow-hidden mb-4 shadow-md bg-surface-container">
           <img alt="Prof. Dr. S. Ravikumar" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="ravikumar.jpg"/>
         </div>
         <h4 class="font-bold text-xl mb-1 text-on-surface">Prof. Dr. S. Ravikumar</h4>
-        <p class="text-on-surface-variant mb-1">Assistant Director of Research</p>
-        <p class="text-sm font-bold text-primary uppercase tracking-wider">VMRF-DU & AVMC&H Puducherry</p>
+        <p class="text-on-surface-variant text-sm mb-2">Assistant Director of Research</p>
+        <div class="flex items-center gap-2 flex-wrap">
+          <span class="text-[11px] font-bold bg-primary/10 text-primary px-2.5 py-0.5 rounded-full">🇮🇳 India</span>
+          <span class="text-[11px] text-on-surface-variant">VMRF-DU, Puducherry</span>
+        </div>
       </div>
     </div>
   </div>
@@ -388,7 +425,7 @@
           <li class="flex items-center gap-3 text-on-surface font-medium"><svg class="w-6 h-6 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg> Networking</li>
           <li class="flex items-center gap-3 text-on-surface font-medium"><svg class="w-6 h-6 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg> Lunch</li>
         </ul>
-        <button class="w-full py-5 bg-primary text-white font-bold rounded-2xl shadow-xl shadow-primary/20 hover:bg-primary-container transition-all">Buy Pass</button>
+        <button class="w-full py-3 bg-primary text-white font-semibold text-sm rounded-xl shadow-lg shadow-primary/20 hover:bg-primary-container transition-all">Buy Pass</button>
       </div>
       <!-- For Students -->
       <div class="border border-surface-container-high rounded-3xl p-10 flex flex-col hover:shadow-xl transition-all duration-300 bg-white group">
@@ -404,7 +441,7 @@
           <li class="flex items-center gap-3 text-on-surface-variant"><svg class="w-6 h-6 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg> Networking</li>
           <li class="flex items-center gap-3 text-on-surface-variant"><svg class="w-6 h-6 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg> Lunch</li>
         </ul>
-        <button class="w-full py-5 bg-surface-container text-primary font-bold rounded-2xl group-hover:bg-primary group-hover:text-white transition-all">Buy Pass</button>
+        <button class="w-full py-3 bg-surface-container text-primary font-semibold text-sm rounded-xl group-hover:bg-primary group-hover:text-white transition-all">Buy Pass</button>
       </div>
     </div>
   </div>
@@ -415,7 +452,12 @@
 <section class="py-16 md:py-32 bg-white text-on-surface" id="agenda">
   <div class="max-w-4xl mx-auto px-4">
     <div class="text-center mb-12">
-      <h2 class="text-5xl font-extrabold mb-6">Event Agenda</h2>
+      <h2 class="text-5xl font-extrabold mb-3">Event Agenda</h2>
+      <div class="flex items-center justify-center gap-3 mb-5">
+        <span class="text-sm font-bold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wider">19th — Conference</span>
+        <span class="text-on-surface-variant/40">·</span>
+        <span class="text-sm font-bold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wider">20th — Workshop</span>
+      </div>
       <p class="text-xl text-on-surface-variant">A comprehensive schedule of sessions, keynote speeches, and networking events.</p>
     </div>
 
@@ -590,7 +632,7 @@
       </div>
 
       <div class="mt-10 text-center">
-        <button id="show-more-day1" onclick="toggleMore(1)" class="px-10 py-4 border-2 border-primary text-primary font-bold rounded-xl hover:bg-primary/5 transition-all">Show More</button>
+        <button id="show-more-day1" onclick="toggleMore(1)" class="px-6 py-2.5 border-2 border-primary text-primary font-semibold text-sm rounded-xl hover:bg-primary/5 transition-all">Show More</button>
       </div>
     </div>
 
@@ -735,7 +777,7 @@
       </div>
 
       <div class="mt-10 text-center">
-        <button id="show-more-day2" onclick="toggleMore(2)" class="px-10 py-4 border-2 border-primary text-primary font-bold rounded-xl hover:bg-primary/5 transition-all">Show More</button>
+        <button id="show-more-day2" onclick="toggleMore(2)" class="px-6 py-2.5 border-2 border-primary text-primary font-semibold text-sm rounded-xl hover:bg-primary/5 transition-all">Show More</button>
       </div>
     </div>
 
@@ -795,7 +837,7 @@
           </li>
         </ul>
         <div class="pt-4 md:pt-10">
-          <a class="bg-primary text-white px-8 md:px-12 py-4 md:py-5 rounded-2xl font-black text-lg md:text-xl inline-block hover:shadow-2xl hover:-translate-y-1 transition-all" href="#tickets">Join the Experience</a>
+          <a class="bg-primary text-white px-6 py-2.5 rounded-xl font-semibold text-sm inline-block hover:shadow-xl hover:-translate-y-1 transition-all" href="#tickets">Join the Experience</a>
         </div>
       </div>
       <div class="w-full lg:w-1/2 relative">
