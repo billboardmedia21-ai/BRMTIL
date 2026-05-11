@@ -206,48 +206,50 @@
 <body class="bg-white text-on-surface font-sans h-auto min-h-full">
 
 <!-- BEGIN: Navigation -->
-<nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-surface-container-high">
+<nav class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm">
   <div class="max-w-7xl mx-auto px-5 md:px-8 flex justify-between items-center h-20">
     <div class="flex-shrink-0 flex items-center">
       <a href="#home"><img alt="MEDICREATIVE Logo" class="h-10 md:h-12 w-auto object-contain" src="logo.png"/></a>
     </div>
-    <div class="hidden md:flex space-x-8 text-sm tracking-wide">
-      <a class="text-on-surface-variant hover:text-primary transition-colors font-medium" href="#home">Home</a>
-      <a class="text-on-surface-variant hover:text-primary transition-colors font-medium" href="#speakers">Speakers</a>
-      <a class="text-on-surface-variant hover:text-primary transition-colors font-medium" href="#agenda">Agenda</a>
-      <a class="text-on-surface-variant hover:text-primary transition-colors font-medium" href="#tickets">Tickets</a>
-      <a class="text-on-surface-variant hover:text-primary transition-colors font-medium" href="#">Sponsors</a>
+    <div class="hidden md:flex space-x-10 text-sm tracking-wide">
+      <a class="text-gray-600 hover:text-gray-900 transition-colors font-medium" href="#home">Home</a>
+      <a class="text-gray-600 hover:text-gray-900 transition-colors font-medium" href="#agenda">Agenda</a>
+      <a class="text-gray-600 hover:text-gray-900 transition-colors font-medium" href="#speakers">Speakers</a>
+      <a class="text-gray-600 hover:text-gray-900 transition-colors font-medium" href="#tickets">Tickets</a>
+      <a class="text-gray-600 hover:text-gray-900 transition-colors font-medium" href="#">Sponsors</a>
     </div>
     <div class="flex items-center gap-3">
-      <a class="hidden md:inline-block bg-primary text-white px-6 py-2.5 rounded-md font-semibold hover:bg-primary-container transition-all active:scale-95" href="#tickets">Register Now</a>
+      <a class="hidden md:inline-block bg-primary text-white px-7 py-2.5 rounded-lg font-semibold text-sm hover:opacity-90 transition-all active:scale-95 shadow-md" href="#tickets">Register Now</a>
       <button id="hamburger-btn" class="md:hidden flex flex-col justify-center gap-1.5 w-10 h-10 p-2" onclick="toggleMobileMenu()" aria-label="Menu">
-        <span class="block w-full h-0.5 bg-on-surface rounded transition-all"></span>
-        <span class="block w-full h-0.5 bg-on-surface rounded transition-all"></span>
-        <span class="block w-full h-0.5 bg-on-surface rounded transition-all"></span>
+        <span class="block w-full h-0.5 bg-gray-800 rounded transition-all"></span>
+        <span class="block w-full h-0.5 bg-gray-800 rounded transition-all"></span>
+        <span class="block w-full h-0.5 bg-gray-800 rounded transition-all"></span>
       </button>
     </div>
   </div>
   <!-- Mobile Menu -->
-  <div id="mobile-nav" class="hidden md:hidden bg-white border-b border-surface-container-high px-6 py-6 flex flex-col gap-5 shadow-lg">
-    <a class="text-on-surface-variant font-medium text-base py-1" href="#home" onclick="closeMobileMenu()">Home</a>
-    <a class="text-on-surface-variant font-medium text-base py-1" href="#speakers" onclick="closeMobileMenu()">Speakers</a>
-    <a class="text-on-surface-variant font-medium text-base py-1" href="#agenda" onclick="closeMobileMenu()">Agenda</a>
-    <a class="text-on-surface-variant font-medium text-base py-1" href="#tickets" onclick="closeMobileMenu()">Tickets</a>
-    <a class="text-on-surface-variant font-medium text-base py-1" href="#" onclick="closeMobileMenu()">Sponsors</a>
-    <a class="bg-primary text-white px-6 py-3 rounded-xl font-semibold text-center hover:bg-primary-container transition-all" href="#tickets" onclick="closeMobileMenu()">Register Now</a>
+  <div id="mobile-nav" class="hidden md:hidden bg-white border-b border-gray-100 px-6 py-6 flex flex-col gap-5 shadow-lg">
+    <a class="text-gray-600 font-medium text-base py-1" href="#home" onclick="closeMobileMenu()">Home</a>
+    <a class="text-gray-600 font-medium text-base py-1" href="#agenda" onclick="closeMobileMenu()">Agenda</a>
+    <a class="text-gray-600 font-medium text-base py-1" href="#speakers" onclick="closeMobileMenu()">Speakers</a>
+    <a class="text-gray-600 font-medium text-base py-1" href="#tickets" onclick="closeMobileMenu()">Tickets</a>
+    <a class="text-gray-600 font-medium text-base py-1" href="#" onclick="closeMobileMenu()">Sponsors</a>
+    <a class="bg-primary text-white px-6 py-3 rounded-lg font-semibold text-center hover:opacity-90 transition-all" href="#tickets" onclick="closeMobileMenu()">Register Now</a>
   </div>
 </nav>
 <!-- END: Navigation -->
 
 <!-- BEGIN: Hero Section -->
-<section id="home" class="relative pt-24 pb-16 md:pt-32 md:pb-32 overflow-hidden flex items-start">
+<section id="home" class="relative overflow-hidden flex flex-col mt-20 min-h-[calc(100vh-5rem)]">
   <div class="absolute inset-0 z-0">
-    <img alt="Medical Conference Background" class="w-full h-full object-cover brightness-90 opacity-30" src="hero-background.jpg"/>
-    <div class="absolute inset-0 bg-gradient-to-b from-white/20 via-white/40 to-white"></div>
+    <video autoplay muted loop playsinline class="w-full h-full object-cover" src="VMSH Hero video.mp4"></video>
+    <div class="absolute inset-0 bg-black/70"></div>
   </div>
-  <div class="relative z-10 max-w-7xl mx-auto px-4 text-center">
-    <img alt="BRMTIL MCHENNAI 2026 Logo" class="w-full mx-auto h-auto object-contain mb-10 drop-shadow-2xl max-w-[110rem] block" src="hero-bg.png"/>
-    <div class="max-w-3xl mx-auto mb-10">
+  <div class="relative z-10 max-w-7xl mx-auto px-4 text-center flex flex-col flex-1 pt-10 md:pt-16 pb-6">
+    <div class="flex-1 flex items-center justify-center">
+      <img alt="VMSH Logo" class="w-full mx-auto h-auto object-contain drop-shadow-2xl max-w-[110rem] block" src="VMSH Logo.pdf.png"/>
+    </div>
+    <div class="max-w-3xl mx-auto mb-10 mt-10">
       <!-- Event details bar -->
       <div class="liquid-glass rounded-2xl px-6 py-4 flex flex-row items-center justify-evenly w-full">
         <div class="flex items-center gap-2.5">
@@ -266,32 +268,59 @@
         </div>
       </div>
     </div>
-    <div class="flex flex-wrap justify-center gap-5 mb-10">
+    <div class="flex flex-wrap justify-center gap-5 mb-6">
       <a class="cta-btn text-primary px-6 py-2.5 rounded-xl font-semibold text-base hover:bg-surface-variant transition-all" href="#tickets">Secure Your Pass Now →</a>
     </div>
-    <!-- Featured Logos -->
-    <div class="pt-8 border-t border-surface-container-high">
-      <p class="text-[10px] font-bold text-outline uppercase tracking-widest mb-6">Pioneering Partners in Healthcare</p>
-      <div class="grid grid-cols-2 sm:grid-cols-4 items-center w-full gap-y-6 sm:gap-y-0">
-        <div class="flex items-center justify-center">
-          <img alt="European Wellness Academy" class="h-[77px] w-auto object-contain" src="ewa.png"/>
-        </div>
-        <div class="flex items-center justify-center">
-          <img alt="Vinayaka Mission's Research Foundation" class="h-[77px] w-auto object-contain" src="vmrf.png"/>
-        </div>
-        <div class="flex items-center justify-center">
-          <img alt="AVMC" class="h-16 w-auto object-contain" src="avmc.png"/>
-        </div>
-        <div class="flex items-center justify-center">
-          <img alt="Vinayaka Missions Superspeciality Hospital" class="h-16 w-auto object-contain" src="vmsh.png"/>
-        </div>
-      </div>
+    <!-- Scroll down indicator -->
+    <div class="flex flex-col items-center gap-2 mt-auto pt-6 pb-4 animate-bounce">
+      <span class="text-white/60 text-xs font-medium uppercase tracking-widest">Scroll Down</span>
+      <svg class="w-5 h-5 text-white/60" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </div>
   </div>
 </section>
 
+<!-- BEGIN: Pioneering Partners Section -->
+<section class="bg-white py-14 md:py-20 border-t border-surface-container-high">
+  <div class="max-w-6xl mx-auto px-5 md:px-8">
+    <h2 class="text-4xl md:text-5xl font-black text-on-surface uppercase tracking-tight text-center mb-[6.25rem] leading-tight">Pioneering Partners in <span class="text-primary">Healthcare.</span></h2>
+    <!-- Row 1 — New partners -->
+    <div class="grid grid-cols-2 sm:grid-cols-4 items-center gap-x-8 gap-y-10 mb-12">
+      <div class="flex items-center justify-center h-20">
+        <img alt="IASCT" class="max-h-full w-auto object-contain" src="IASCT-Logo.png"/>
+      </div>
+      <div class="flex items-center justify-center h-20">
+        <img alt="European Wellness Biomedical Group" class="max-h-full w-auto object-contain" src="EWBG COLOR.png"/>
+      </div>
+      <div class="flex items-center justify-center h-20">
+        <img alt="ESAAM" class="max-h-full w-auto object-contain" src="ESAAM.png"/>
+      </div>
+      <div class="flex items-center justify-center h-20">
+        <img alt="IACT" class="max-h-full w-auto object-contain" src="IACT COLOR REV.png"/>
+      </div>
+    </div>
+    <!-- Divider -->
+    <div class="border-t border-surface-container-high mb-12"></div>
+    <!-- Row 2 — Existing partners -->
+    <div class="grid grid-cols-2 sm:grid-cols-4 items-center gap-x-8 gap-y-10">
+      <div class="flex items-center justify-center h-20">
+        <img alt="European Wellness Academy" class="max-h-full w-auto object-contain" src="ewa.png"/>
+      </div>
+      <div class="flex items-center justify-center h-20">
+        <img alt="Vinayaka Mission's Research Foundation" class="max-h-full w-auto object-contain" src="vmrf.png"/>
+      </div>
+      <div class="flex items-center justify-center h-20">
+        <img alt="AVMC" class="max-h-full w-auto object-contain" src="avmc.png"/>
+      </div>
+      <div class="flex items-center justify-center h-20">
+        <img alt="Vinayaka Missions Superspeciality Hospital" class="max-h-full w-auto object-contain" src="vmsh.png"/>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- END: Pioneering Partners Section -->
+
 <!-- BEGIN: Event Summary Section -->
-<section class="bg-white py-14 md:py-24">
+<section class="bg-white py-10 md:py-14">
   <div class="max-w-7xl mx-auto px-4">
     <div class="max-w-3xl mx-auto text-center">
       <h2 class="text-4xl md:text-5xl font-black text-on-surface mb-6 leading-tight uppercase tracking-tight">
@@ -347,6 +376,7 @@
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 max-w-7xl mx-auto">
       <!-- Speaker 1 — Dr. Mike Chan (Featured) -->
+      <a href="https://www.linkedin.com/in/datosridrmikechan/" target="_blank" rel="noopener noreferrer" class="block">
       <div class="featured-card rounded-3xl shadow-xl">
         <div class="featured-inner group speaker-card relative p-4">
           <div class="absolute top-0 right-0 bg-primary text-white text-[10px] font-black uppercase tracking-widest px-4 py-1.5 rounded-tr-[22px] rounded-bl-2xl z-10">Featured Speaker</div>
@@ -361,7 +391,9 @@
           </div>
         </div>
       </div>
+      </a>
       <!-- Speaker 2 — Dmytro Klokol -->
+      <a href="https://www.linkedin.com/in/dr-dmytro-klokol-md-phd-2b87332a/" target="_blank" rel="noopener noreferrer" class="block">
       <div class="group speaker-card">
         <div class="relative aspect-[4/5] rounded-3xl overflow-hidden mb-4 shadow-md bg-surface-container">
           <img alt="Prof. Dr. Dmytro Klokol" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="dmytro.jpg"/>
@@ -373,7 +405,9 @@
           <span class="text-[11px] text-on-surface-variant">European Wellness Biomedical Group</span>
         </div>
       </div>
+      </a>
       <!-- Speaker 3 — Olha Nishkumai -->
+      <a href="https://european-wellness.eu/advisory/prof-dr-olha-nishkumai/" target="_blank" rel="noopener noreferrer" class="block">
       <div class="group speaker-card">
         <div class="relative aspect-[4/5] rounded-3xl overflow-hidden mb-4 shadow-md bg-surface-container">
           <img alt="Prof. Dr. Olha Nishkumai" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" style="object-position: center 15%" src="olha.jpg"/>
@@ -385,7 +419,9 @@
           <span class="text-[11px] text-on-surface-variant">European Wellness Biomedical Group</span>
         </div>
       </div>
+      </a>
       <!-- Speaker 4 — Glen Alwin -->
+      <a href="https://www.linkedin.com/in/glen-alvin-10ba0469/" target="_blank" rel="noopener noreferrer" class="block">
       <div class="group speaker-card">
         <div class="relative aspect-[4/5] rounded-3xl overflow-hidden mb-4 shadow-md bg-surface-container">
           <img alt="Dr. G.K. Glen Alwin" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" style="object-position: center 15%" src="glenalwin.jpg"/>
@@ -397,7 +433,9 @@
           <span class="text-[11px] text-on-surface-variant">EW Clinic, Kota Kinabalu Sabah</span>
         </div>
       </div>
+      </a>
       <!-- Speaker 5 — Bawani Nesamany -->
+      <a href="https://www.linkedin.com/in/bawaninesamany/" target="_blank" rel="noopener noreferrer" class="block">
       <div class="group speaker-card">
         <div class="relative aspect-[4/5] rounded-3xl overflow-hidden mb-4 shadow-md bg-surface-container">
           <img alt="Dr. Bawani Nesamany" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" src="bawani.jpg"/>
@@ -409,6 +447,7 @@
           <span class="text-[11px] text-on-surface-variant">European Wellness Biomedical Group</span>
         </div>
       </div>
+      </a>
       <!-- Speaker 6 — Prabhu Kumar Raju -->
       <div class="group speaker-card">
         <div class="relative aspect-[4/5] rounded-3xl overflow-hidden mb-4 shadow-md bg-surface-container">
@@ -897,6 +936,39 @@
 </section>
 <!-- END: Abstract Competition -->
 
+<!-- BEGIN: VMSH Leadership Section -->
+<section class="bg-white py-10 md:py-20 border-t border-surface-container-high">
+  <div class="max-w-6xl mx-auto px-5 md:px-8">
+    <div class="max-w-3xl mx-auto text-center mb-16">
+      <p class="text-on-surface-variant text-base md:text-lg leading-relaxed">The leadership and visionaries of VMSH Group for advancing innovation in regenerative medicine and longevity science.</p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-10 max-w-4xl mx-auto">
+      <!-- Person 1 -->
+      <div class="flex flex-col items-center text-center">
+        <div class="w-48 h-48 rounded-full overflow-hidden shadow-lg mb-5 bg-surface-container">
+          <img alt="Dr. A.S. Ganesan" class="w-full h-full object-cover" src="Dr.A.S.Ganesan.jpeg"/>
+        </div>
+        <h4 class="font-bold text-lg text-on-surface">Dr. A.S. Ganesan</h4>
+      </div>
+      <!-- Person 2 -->
+      <div class="flex flex-col items-center text-center">
+        <div class="w-48 h-48 rounded-full overflow-hidden shadow-lg mb-5 bg-surface-container">
+          <img alt="Dr. Anuradha Ganesan" class="w-full h-full object-cover" src="Dr.Anuradha-Ganesan.jpeg"/>
+        </div>
+        <h4 class="font-bold text-lg text-on-surface">Dr. Anuradha Ganesan</h4>
+      </div>
+      <!-- Person 3 -->
+      <div class="flex flex-col items-center text-center">
+        <div class="w-48 h-48 rounded-full overflow-hidden shadow-lg mb-5 bg-surface-container">
+          <img alt="Mr. J. Suresh Samuel" class="w-full h-full object-cover" src="Mr.J.Suresh Samuel.jpeg"/>
+        </div>
+        <h4 class="font-bold text-lg text-on-surface">Mr. J. Suresh Samuel</h4>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- END: VMSH Leadership Section -->
+
 <!-- BEGIN: Trusted Wall -->
 <section class="bg-white border-t border-surface-container-high py-16 md:py-32">
   <div class="max-w-7xl mx-auto px-4">
@@ -1016,7 +1088,11 @@
           <div class="space-y-4">
             <div class="flex items-start gap-3">
               <span class="material-symbols-outlined text-primary">mail</span>
-              <a class="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium" href="mailto:registrar@medicreative.com">registrar@medicreative.com</a>
+              <a class="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium" href="mailto:brmtilimcon2026@avmc.edu.in">brmtilimcon2026@avmc.edu.in</a>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-primary">phone</span>
+              <a class="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium" href="tel:+919677015005">+91 96770 15005</a>
             </div>
             <div class="flex items-start gap-3">
               <span class="material-symbols-outlined text-primary">location_on</span>
