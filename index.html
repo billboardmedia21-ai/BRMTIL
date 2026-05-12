@@ -254,27 +254,33 @@
     <video autoplay muted loop playsinline class="w-full h-full object-cover" src="VMSH Hero video.mp4"></video>
     <div class="absolute inset-0 bg-black/70"></div>
   </div>
-  <div class="relative z-10 max-w-7xl mx-auto px-4 text-center flex flex-col flex-1 pt-10 md:pt-16 pb-6">
+  <div class="relative z-10 max-w-7xl mx-auto px-4 text-center flex flex-col flex-1 pt-6 md:pt-16 pb-6">
     <div class="flex-1 flex items-center justify-center">
-      <img alt="VMSH Logo" class="w-[calc(100%+2rem)] -mx-4 scale-[1.3] sm:scale-100 sm:mx-auto sm:w-full h-auto object-contain drop-shadow-2xl max-w-[110rem] block" src="VMSH Logo.pdf.png"/>
+      <img alt="VMSH Logo" class="w-[88vw] sm:w-full mx-auto h-auto object-contain drop-shadow-2xl max-w-[110rem] block" src="VMSH Logo.pdf.png"/>
     </div>
-    <div class="max-w-3xl mx-auto mb-10 mt-10">
-      <p class="text-white/80 text-sm sm:text-base font-medium tracking-wide mb-4 whitespace-nowrap">Bio-Regen Medicine – The Individualized Longevity Medicine</p>
-      <!-- Event details bar -->
-      <div class="liquid-glass rounded-2xl px-10 py-4 flex flex-row items-center justify-evenly w-full gap-8">
-        <div class="flex items-center gap-2.5">
+    <div class="w-full max-w-3xl mx-auto mb-6 mt-6 sm:mb-10 sm:mt-10">
+      <p class="text-white/80 text-xs sm:text-base font-medium tracking-wide mb-4 leading-snug">Bio-Regen Medicine – The Individualized Longevity Medicine</p>
+      <!-- Event details bar — 2 lines on mobile, 1 row on sm+ -->
+      <div class="liquid-glass rounded-2xl px-4 sm:px-10 py-4 flex flex-col sm:flex-row sm:items-center sm:justify-evenly w-full gap-3 sm:gap-8">
+        <!-- Line 1: Location -->
+        <div class="flex items-center justify-center gap-2.5">
           <span class="material-symbols-outlined text-[#70d8c8] text-xl">location_on</span>
           <span class="grad-text font-bold text-sm">Pullman Chennai,</span><span class="grad-text text-sm opacity-70">&nbsp;Anna Salai</span>
         </div>
-        <div class="w-px h-6 bg-white/20 flex-shrink-0"></div>
-        <div class="flex items-center gap-2.5">
-          <span class="material-symbols-outlined text-[#70d8c8] text-xl">calendar_month</span>
-          <span class="grad-text font-bold text-sm">19 – 20 June 2026</span>
-        </div>
-        <div class="w-px h-6 bg-white/20 flex-shrink-0"></div>
-        <div class="flex items-center gap-2.5">
-          <span class="material-symbols-outlined text-[#70d8c8] text-xl">schedule</span>
-          <span class="grad-text font-bold text-sm">8:30 AM – 5:00 PM</span>
+        <!-- Divider — horizontal on mobile, vertical on sm+ -->
+        <div class="h-px w-full sm:w-px sm:h-6 bg-white/20 flex-shrink-0"></div>
+        <!-- Line 2: Date + Time -->
+        <div class="flex items-center justify-center gap-4 sm:gap-8">
+          <div class="flex items-center gap-2.5">
+            <span class="material-symbols-outlined text-[#70d8c8] text-xl">calendar_month</span>
+            <span class="grad-text font-bold text-sm">19 – 20 June 2026</span>
+          </div>
+          <div class="w-px h-5 bg-white/20 flex-shrink-0 sm:hidden"></div>
+          <div class="hidden sm:block w-px h-6 bg-white/20 flex-shrink-0"></div>
+          <div class="flex items-center gap-2.5">
+            <span class="material-symbols-outlined text-[#70d8c8] text-xl">schedule</span>
+            <span class="grad-text font-bold text-sm">8:30 AM – 5:00 PM</span>
+          </div>
         </div>
       </div>
     </div>
