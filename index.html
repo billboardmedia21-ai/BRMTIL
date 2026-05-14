@@ -491,7 +491,7 @@
       <!-- Speaker 7 — V.N. Selvam -->
       <div class="cursor-pointer group speaker-card" onclick="openSpeakerModal('selvam')">
         <div class="relative aspect-[4/5] rounded-3xl overflow-hidden mb-4 shadow-md bg-surface-container">
-          <img alt="Dr. V.N. Selvam" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="selvam.jpg"/>
+          <img alt="Dr. V.N. Selvam" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" style="object-position: center top" src="selvam.jpg"/>
         </div>
         <h4 class="font-bold text-xl mb-1 text-on-surface">Dr. V.N. Selvam</h4>
         <p class="text-on-surface-variant text-sm mb-2">Medical Director & Senior Consultant</p>
@@ -524,41 +524,91 @@
       <h2 class="text-5xl font-extrabold mb-6">Registration Passes</h2>
       <p class="text-xl text-on-surface-variant">Select your attendance level for the MediCreative Symposium.</p>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-3xl mx-auto">
-      <!-- For Doctors -->
-      <div class="border-2 border-primary rounded-3xl p-10 flex flex-col shadow-2xl bg-white relative">
-        <div class="absolute -top-px -right-px bg-primary text-white px-6 py-2 rounded-tr-3xl rounded-bl-2xl text-sm font-bold uppercase tracking-wider">Doctors</div>
-        <div class="mb-10">
-          <h3 class="text-2xl font-bold mb-3 text-on-surface">For Doctors</h3>
+    <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8 max-w-7xl mx-auto">
+
+      <!-- Domestic — Doctors -->
+      <div class="border-2 border-primary rounded-3xl p-8 flex flex-col shadow-2xl bg-white relative">
+        <div class="absolute -top-px -right-px bg-primary text-white px-4 py-1.5 rounded-tr-3xl rounded-bl-2xl text-xs font-bold uppercase tracking-wider">Most Popular</div>
+        <div class="mb-3">
+          <span class="inline-flex items-center gap-1.5 text-xs font-bold bg-orange-50 text-orange-600 px-2.5 py-1 rounded-full mb-3">🇮🇳 India — Domestic</span>
+          <h3 class="text-xl font-bold mb-2 text-on-surface">Doctors Pass</h3>
+          <p class="text-xs text-on-surface-variant mb-4 leading-relaxed">For medical practitioners, clinicians &amp; healthcare professionals registered in India.</p>
           <div class="flex items-baseline gap-2">
-            <span class="text-4xl font-black text-on-surface">₹ 10,000</span>
-            <span class="text-outline font-medium">/ person</span>
+            <span class="text-3xl font-black text-on-surface">₹ 12,000</span>
+            <span class="text-outline text-sm font-medium">/ person</span>
           </div>
         </div>
-        <ul class="space-y-5 mb-10 flex-grow">
-          <li class="flex items-center gap-3 text-on-surface font-medium"><svg class="w-6 h-6 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg> Full session access</li>
-          <li class="flex items-center gap-3 text-on-surface font-medium"><svg class="w-6 h-6 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg> Networking</li>
-          <li class="flex items-center gap-3 text-on-surface font-medium"><svg class="w-6 h-6 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg> Lunch</li>
+        <ul class="space-y-3 mb-8 flex-grow">
+          <li class="flex items-center gap-3 text-on-surface text-sm font-medium"><svg class="w-5 h-5 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg>Full 2-day access</li>
+          <li class="flex items-center gap-3 text-on-surface text-sm font-medium"><svg class="w-5 h-5 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg>Networking</li>
+          <li class="flex items-center gap-3 text-on-surface text-sm font-medium"><svg class="w-5 h-5 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg>Lunch included</li>
         </ul>
-        <button class="w-full py-3 bg-primary text-white font-semibold text-sm rounded-xl shadow-lg shadow-primary/20 hover:bg-primary-container transition-all">Buy Pass</button>
+        <button onclick="openTicketModal('doctor')" class="w-full py-3 bg-primary text-white font-semibold text-sm rounded-xl shadow-lg shadow-primary/20 hover:bg-primary-container transition-all">Buy Pass</button>
       </div>
-      <!-- For Students -->
-      <div class="border border-surface-container-high rounded-3xl p-10 flex flex-col hover:shadow-xl transition-all duration-300 bg-white group">
-        <div class="mb-10">
-          <h3 class="text-2xl font-bold mb-3 text-on-surface">For Students</h3>
+
+      <!-- Domestic — Students -->
+      <div class="border border-surface-container-high rounded-3xl p-8 flex flex-col hover:shadow-xl transition-all duration-300 bg-white group">
+        <div class="mb-3">
+          <span class="inline-flex items-center gap-1.5 text-xs font-bold bg-orange-50 text-orange-600 px-2.5 py-1 rounded-full mb-3">🇮🇳 India — Domestic</span>
+          <h3 class="text-xl font-bold mb-2 text-on-surface">Students Pass</h3>
+          <p class="text-xs text-on-surface-variant mb-4 leading-relaxed">For UG/PG medical students enrolled in an Indian institution.</p>
           <div class="flex items-baseline gap-2">
-            <span class="text-4xl font-black text-on-surface">₹ 7,500</span>
-            <span class="text-outline font-medium">/ person</span>
+            <span class="text-3xl font-black text-on-surface">₹ 8,000</span>
+            <span class="text-outline text-sm font-medium">/ person</span>
           </div>
         </div>
-        <ul class="space-y-5 mb-10 flex-grow">
-          <li class="flex items-center gap-3 text-on-surface-variant"><svg class="w-6 h-6 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg> Full session access</li>
-          <li class="flex items-center gap-3 text-on-surface-variant"><svg class="w-6 h-6 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg> Networking</li>
-          <li class="flex items-center gap-3 text-on-surface-variant"><svg class="w-6 h-6 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg> Lunch</li>
+        <ul class="space-y-3 mb-8 flex-grow">
+          <li class="flex items-center gap-3 text-on-surface-variant text-sm"><svg class="w-5 h-5 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg>Full 2-day access</li>
+          <li class="flex items-center gap-3 text-on-surface-variant text-sm"><svg class="w-5 h-5 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg>Networking</li>
+          <li class="flex items-center gap-3 text-on-surface-variant text-sm"><svg class="w-5 h-5 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg>Lunch included</li>
         </ul>
-        <button class="w-full py-3 bg-surface-container text-primary font-semibold text-sm rounded-xl group-hover:bg-primary group-hover:text-white transition-all">Buy Pass</button>
+        <button onclick="openTicketModal('student')" class="w-full py-3 bg-surface-container text-primary font-semibold text-sm rounded-xl group-hover:bg-primary group-hover:text-white transition-all">Buy Pass</button>
       </div>
+
+      <!-- International — Doctors -->
+      <div class="border-2 border-primary rounded-3xl p-8 flex flex-col shadow-2xl bg-white relative">
+        <div class="absolute -top-px -right-px bg-primary text-white px-4 py-1.5 rounded-tr-3xl rounded-bl-2xl text-xs font-bold uppercase tracking-wider">International</div>
+        <div class="mb-3">
+          <span class="inline-flex items-center gap-1.5 text-xs font-bold bg-blue-50 text-blue-600 px-2.5 py-1 rounded-full mb-3">🌍 Overseas Delegate</span>
+          <h3 class="text-xl font-bold mb-2 text-on-surface">Doctors Pass</h3>
+          <p class="text-xs text-on-surface-variant mb-4 leading-relaxed">For medical practitioners &amp; healthcare professionals based outside India.</p>
+          <div class="flex items-baseline gap-2">
+            <span class="text-3xl font-black text-on-surface">$ 126</span>
+            <span class="text-outline text-sm font-medium">/ person</span>
+          </div>
+        </div>
+        <ul class="space-y-3 mb-8 flex-grow">
+          <li class="flex items-center gap-3 text-on-surface text-sm font-medium"><svg class="w-5 h-5 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg>Full 2-day access</li>
+          <li class="flex items-center gap-3 text-on-surface text-sm font-medium"><svg class="w-5 h-5 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg>Networking</li>
+          <li class="flex items-center gap-3 text-on-surface text-sm font-medium"><svg class="w-5 h-5 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg>Lunch included</li>
+        </ul>
+        <button onclick="openTicketModal('intl-doctor')" class="w-full py-3 bg-primary text-white font-semibold text-sm rounded-xl shadow-lg shadow-primary/20 hover:bg-primary-container transition-all">Buy Pass</button>
+      </div>
+
+      <!-- International — Students -->
+      <div class="border border-surface-container-high rounded-3xl p-8 flex flex-col hover:shadow-xl transition-all duration-300 bg-white group">
+        <div class="mb-3">
+          <span class="inline-flex items-center gap-1.5 text-xs font-bold bg-blue-50 text-blue-600 px-2.5 py-1 rounded-full mb-3">🌍 Overseas Delegate</span>
+          <h3 class="text-xl font-bold mb-2 text-on-surface">Students Pass</h3>
+          <p class="text-xs text-on-surface-variant mb-4 leading-relaxed">For medical students enrolled in an institution outside India.</p>
+          <div class="flex items-baseline gap-2">
+            <span class="text-3xl font-black text-on-surface">$ 84</span>
+            <span class="text-outline text-sm font-medium">/ person</span>
+          </div>
+        </div>
+        <ul class="space-y-3 mb-8 flex-grow">
+          <li class="flex items-center gap-3 text-on-surface-variant text-sm"><svg class="w-5 h-5 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg>Full 2-day access</li>
+          <li class="flex items-center gap-3 text-on-surface-variant text-sm"><svg class="w-5 h-5 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg>Networking</li>
+          <li class="flex items-center gap-3 text-on-surface-variant text-sm"><svg class="w-5 h-5 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg>Lunch included</li>
+        </ul>
+        <button onclick="openTicketModal('intl-student')" class="w-full py-3 bg-surface-container text-primary font-semibold text-sm rounded-xl group-hover:bg-primary group-hover:text-white transition-all">Buy Pass</button>
+      </div>
+
     </div>
+    <p class="text-center text-sm text-on-surface-variant mt-8 flex items-center justify-center gap-2">
+      <span class="material-symbols-outlined text-primary text-base">info</span>
+      Registration limited to <strong class="text-on-surface">300 doctors</strong> and <strong class="text-on-surface">150 students</strong>. Secure your seat early.
+    </p>
   </div>
 </section>
 <!-- END: Registration Passes -->
@@ -1093,8 +1143,47 @@
 </footer>
 <!-- END: Footer -->
 
+<!-- BEGIN: Ticket Modal -->
+<div id="ticket-modal" class="fixed inset-0 z-[300] flex items-end sm:items-center justify-center p-0 sm:p-4 hidden" role="dialog" aria-modal="true">
+  <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="closeTicketModal()"></div>
+  <div class="relative z-10 bg-white w-full sm:max-w-2xl rounded-t-3xl sm:rounded-3xl shadow-2xl flex flex-col max-h-[95vh] sm:max-h-[90vh] overflow-hidden ticket-modal-sheet">
+    <!-- Handle -->
+    <div class="sm:hidden flex justify-center pt-3 pb-1 flex-shrink-0">
+      <div class="w-10 h-1 rounded-full bg-gray-200"></div>
+    </div>
+    <!-- Header -->
+    <div class="flex items-center justify-between px-5 sm:px-8 pt-4 sm:pt-6 pb-4 flex-shrink-0 border-b border-surface-container-high">
+      <div>
+        <h3 id="ticket-modal-title" class="text-lg font-bold text-on-surface">Register — Doctors Pass</h3>
+        <p class="text-xs text-on-surface-variant mt-0.5">Bio-Regen Medicine · The Individualized Longevity Medicine 2026</p>
+      </div>
+      <button onclick="closeTicketModal()" aria-label="Close" class="w-8 h-8 flex items-center justify-center rounded-full bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-colors text-xl leading-none flex-shrink-0">×</button>
+    </div>
+    <!-- Widget -->
+    <div class="flex-1 overflow-y-auto">
+      <iframe id="konfhub-widget" src="https://konfhub.com/widget/brmtilm-2026?desc=false&secondaryBg=F7F7F7&ticketBg=F7F7F7&borderCl=F7F7F7&bg=FFFFFF&fontColor=1e1f24&ticketCl=1e1f24&btnColor=036e66&fontFamily=Hind&borderRadius=10&widget_type=standard&tickets=100676&ticketId=100676%7C1" title="Register for Bio-Regen Medicine The Individualized Longevity Medicine 2026" width="100%" height="500" allow="payment" class="block w-full border-0"></iframe>
+    </div>
+  </div>
+</div>
+<!-- END: Ticket Modal -->
+
 <!-- BEGIN: Speaker Modal -->
 <style>
+  .ticket-modal-sheet {
+    transform: translateY(100%);
+    transition: transform 0.35s cubic-bezier(0.32,0.72,0,1);
+  }
+  @media (min-width: 640px) {
+    .ticket-modal-sheet {
+      transform: scale(0.96) translateY(12px);
+      opacity: 0;
+      transition: transform 0.28s ease, opacity 0.28s ease;
+    }
+  }
+  .ticket-modal-sheet.ticket-modal-in {
+    transform: none;
+    opacity: 1;
+  }
   .olha-img {
     transform: scale(1.15) translateY(-8%);
     transition: transform 700ms;
@@ -1184,6 +1273,35 @@
     // Abstract halves
     document.querySelectorAll('section .flex.flex-wrap > div').forEach((el, i) => observe(el, i * 100));
   })();
+
+  var TICKET_SRCS = {
+    'doctor':       'https://konfhub.com/widget/brmtilm-2026?desc=false&secondaryBg=F7F7F7&ticketBg=F7F7F7&borderCl=F7F7F7&bg=FFFFFF&fontColor=1e1f24&ticketCl=1e1f24&btnColor=036e66&fontFamily=Hind&borderRadius=10&widget_type=standard&tickets=100676&ticketId=100676%7C1',
+    'student':      'https://konfhub.com/widget/brmtilm-2026?desc=false&secondaryBg=F7F7F7&ticketBg=F7F7F7&borderCl=F7F7F7&bg=FFFFFF&fontColor=1e1f24&ticketCl=1e1f24&btnColor=006e69&fontFamily=Hind&borderRadius=10&widget_type=standard&tickets=100677&ticketId=100677%7C1',
+    'intl-doctor':  'https://konfhub.com/widget/brmtilm-2026?desc=false&secondaryBg=F7F7F7&ticketBg=F7F7F7&borderCl=F7F7F7&bg=FFFFFF&fontColor=1e1f24&ticketCl=1e1f24&btnColor=006e6d&fontFamily=Hind&borderRadius=10&widget_type=standard&tickets=100807&ticketId=100807%7C1',
+    'intl-student': 'https://konfhub.com/widget/brmtilm-2026?desc=false&secondaryBg=F7F7F7&ticketBg=F7F7F7&borderCl=F7F7F7&bg=FFFFFF&fontColor=1e1f24&ticketCl=1e1f24&btnColor=006b6e&fontFamily=Hind&borderRadius=10&widget_type=standard&tickets=100808&ticketId=100808%7C1'
+  };
+  var TICKET_TITLES = {
+    'doctor':       'Register — Doctors Pass (India)',
+    'student':      'Register — Students Pass (India)',
+    'intl-doctor':  'Register — International Doctors Pass',
+    'intl-student': 'Register — International Students Pass'
+  };
+  function openTicketModal(type) {
+    var modal = document.getElementById('ticket-modal');
+    var sheet = modal.querySelector('.ticket-modal-sheet');
+    document.getElementById('ticket-modal-title').textContent = TICKET_TITLES[type] || 'Register';
+    document.getElementById('konfhub-widget').src = TICKET_SRCS[type] || '';
+    sheet.classList.remove('ticket-modal-in');
+    modal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+    requestAnimationFrame(function(){ requestAnimationFrame(function(){ sheet.classList.add('ticket-modal-in'); }); });
+  }
+  function closeTicketModal() {
+    var modal = document.getElementById('ticket-modal');
+    var sheet = modal.querySelector('.ticket-modal-sheet');
+    sheet.classList.remove('ticket-modal-in');
+    setTimeout(function(){ modal.classList.add('hidden'); document.body.style.overflow = ''; }, 300);
+  }
 
   function toggleEventSummary() {
     var el = document.getElementById('event-summary-expanded');
