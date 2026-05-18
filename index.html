@@ -1,8 +1,16 @@
 <!DOCTYPE html>
 <html class="scroll-smooth h-auto min-h-full" lang="en">
 <head>
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="preconnect" href="https://www.googletagmanager.com"/>
+  <link rel="preconnect" href="https://connect.facebook.net"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&icon_names=calendar_month,expand_more,info,keyboard_double_arrow_down,keyboard_double_arrow_up,location_on,mail,phone,schedule&display=swap" media="print" onload="this.media='all'"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700;800;900&display=swap" media="print" onload="this.media='all'"/>
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&icon_names=calendar_month,expand_more,info,keyboard_double_arrow_down,keyboard_double_arrow_up,location_on,mail,phone,schedule&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
+  </noscript>
   <meta charset="utf-8"/>
   <link rel="icon" type="image/png" href="favicon.png"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -16,98 +24,7 @@
   <meta name="twitter:title" content="BRMTILIM Chennai 2026 | Bio-Regen Medicine – The Individualized Longevity Medicine"/>
   <meta name="twitter:description" content="Bio-Regen Medicine – The Individualized Longevity Medicine. VMRF × EWBG Conference & Workshop, 19–20 June 2026, Pullman Chennai, Anna Salai."/>
   <meta name="twitter:image" content="VMSH Logo.pdf.png"/>
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <script id="tailwind-config">
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          "colors": {
-            "secondary-fixed": "#e0e0ff",
-            "on-secondary": "#ffffff",
-            "secondary-container": "#959efd",
-            "on-primary-container": "#f4fffb",
-            "on-surface": "#191c1d",
-            "on-tertiary-fixed-variant": "#354a53",
-            "on-tertiary-container": "#fbfdff",
-            "surface-container": "#eceeef",
-            "primary-container": "#008376",
-            "on-primary-fixed-variant": "#005048",
-            "secondary-fixed-dim": "#bdc2ff",
-            "on-secondary-fixed-variant": "#343d96",
-            "on-primary-fixed": "#00201c",
-            "tertiary-fixed-dim": "#b4cad6",
-            "surface": "#f8fafb",
-            "surface-bright": "#f8fafb",
-            "on-secondary-container": "#27308a",
-            "error": "#ba1a1a",
-            "tertiary-fixed": "#cfe6f2",
-            "on-tertiary": "#ffffff",
-            "on-error": "#ffffff",
-            "inverse-on-surface": "#eff1f2",
-            "surface-container-lowest": "#ffffff",
-            "surface-tint": "#006b5f",
-            "on-error-container": "#93000a",
-            "primary-fixed-dim": "#70d8c8",
-            "on-tertiary-fixed": "#071e27",
-            "error-container": "#ffdad6",
-            "on-secondary-fixed": "#000767",
-            "surface-container-low": "#f2f4f5",
-            "primary-fixed": "#8df5e4",
-            "outline": "#6d7a77",
-            "tertiary-container": "#627882",
-            "on-background": "#191c1d",
-            "on-primary": "#ffffff",
-            "surface-dim": "#d8dadb",
-            "primary": "#00685d",
-            "tertiary": "#4a5f69",
-            "surface-variant": "#e1e3e4",
-            "background": "#f8fafb",
-            "surface-container-high": "#e6e8e9",
-            "surface-container-highest": "#e1e3e4",
-            "on-surface-variant": "#3d4946",
-            "secondary": "#4c56af",
-            "inverse-primary": "#70d8c8",
-            "inverse-surface": "#2e3132",
-            "outline-variant": "#bcc9c5"
-          },
-          "borderRadius": {
-            "DEFAULT": "0.125rem",
-            "lg": "0.25rem",
-            "xl": "0.5rem",
-            "full": "0.75rem"
-          },
-          "spacing": {
-            "unit": "4px",
-            "stack-lg": "32px",
-            "stack-sm": "8px",
-            "margin-page": "48px",
-            "container-max": "1280px",
-            "gutter": "24px",
-            "stack-md": "16px",
-            "section-padding": "80px"
-          },
-          "fontFamily": {
-            "sans": ["Public Sans", "sans-serif"],
-            "h3": ["Public Sans"],
-            "body-lg": ["Public Sans"],
-            "label-caps": ["Public Sans"],
-            "h1": ["Public Sans"],
-            "body-md": ["Public Sans"],
-            "h2": ["Public Sans"]
-          },
-          "fontSize": {
-            "h3": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
-            "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
-            "label-caps": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "700"}],
-            "h1": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-            "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
-            "h2": ["32px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}]
-          }
-        },
-      },
-    }
-  </script>
+  <link rel="stylesheet" href="tailwind.css"/>
   <style>
     .text-gradient {
       background: linear-gradient(to right, #00685d, #008376);
@@ -211,14 +128,36 @@
       #agenda .group > div:nth-child(2) { padding-left: 1.25rem !important; }
     }
   </style>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SV91JRBVN5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-SV91JRBVN5');
+  </script>
+  <!-- Meta Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window,document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '966544772663221');
+    fbq('track', 'PageView');
+  </script>
 </head>
 <body class="bg-white text-on-surface font-sans h-auto min-h-full">
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=966544772663221&ev=PageView&noscript=1"/></noscript>
 
 <!-- BEGIN: Navigation -->
 <nav class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm">
   <div class="max-w-7xl mx-auto px-5 md:px-8 flex justify-between items-center h-20">
     <div class="flex-shrink-0 flex items-center">
-      <a href="#home"><img alt="MEDICREATIVE Logo" class="h-10 md:h-12 w-auto object-contain" src="logo.png"/></a>
+      <a href="#home"><img alt="MEDICREATIVE Logo" class="h-10 md:h-12 w-auto object-contain" src="logo.webp"/></a>
     </div>
     <div class="hidden md:flex space-x-10 text-sm tracking-wide">
       <a class="text-gray-600 hover:text-gray-900 transition-colors font-medium" href="#home">Home</a>
@@ -256,7 +195,7 @@
   </div>
   <div class="relative z-10 max-w-7xl mx-auto px-4 text-center flex flex-col flex-1 pt-6 md:pt-16 pb-6">
     <div class="flex-1 flex items-center justify-center">
-      <img alt="VMSH Logo" class="w-[88vw] scale-[1.68] sm:scale-100 sm:w-full mx-auto h-auto object-contain drop-shadow-2xl max-w-[110rem] block" src="VMSH Logo.pdf.png"/>
+      <img alt="VMSH Logo" class="w-[88vw] scale-[1.68] sm:scale-100 sm:w-full mx-auto h-auto object-contain drop-shadow-2xl max-w-[110rem] block" src="VMSH Logo.pdf.webp" fetchpriority="high" loading="eager"/>
     </div>
     <div class="w-full max-w-3xl mx-auto mb-6 mt-6 sm:mb-10 sm:mt-10">
       <p class="text-white/80 text-xs sm:text-base font-medium tracking-wide mb-4 leading-snug">Bio-Regen Medicine – The Individualized Longevity Medicine</p>
@@ -302,16 +241,16 @@
     <!-- Row 1 — New partners -->
     <div class="grid grid-cols-2 sm:grid-cols-4 items-center gap-x-8 gap-y-10 mb-12">
       <div class="flex items-center justify-center h-20">
-        <img alt="IASCT" class="max-h-full w-auto object-contain" src="IASCT-Logo.png"/>
+        <img alt="IASCT" class="max-h-full w-auto object-contain" src="IASCT-Logo.webp" loading="lazy"/>
       </div>
       <div class="flex items-center justify-center h-20">
-        <img alt="European Wellness Biomedical Group" class="max-h-full w-auto object-contain" src="EWBG COLOR.png"/>
+        <img alt="European Wellness Biomedical Group" class="max-h-full w-auto object-contain" src="EWBG COLOR.webp" loading="lazy"/>
       </div>
       <div class="flex items-center justify-center h-20">
-        <img alt="ESAAM" class="max-h-full w-auto object-contain" src="ESAAM.png"/>
+        <img alt="ESAAM" class="max-h-full w-auto object-contain" src="ESAAM.webp" loading="lazy"/>
       </div>
       <div class="flex items-center justify-center h-20">
-        <img alt="IACT" class="max-h-full w-auto object-contain" src="IACT COLOR REV.png"/>
+        <img alt="IACT" class="max-h-full w-auto object-contain" src="IACT COLOR REV.webp" loading="lazy"/>
       </div>
     </div>
     <!-- Divider -->
@@ -319,16 +258,16 @@
     <!-- Row 2 — Existing partners -->
     <div class="grid grid-cols-2 sm:grid-cols-4 items-center gap-x-8 gap-y-10">
       <div class="flex items-center justify-center h-20">
-        <img alt="European Wellness Academy" class="max-h-full w-auto object-contain" src="ewa.png"/>
+        <img alt="European Wellness Academy" class="max-h-full w-auto object-contain" src="ewa.webp" loading="lazy"/>
       </div>
       <div class="flex items-center justify-center h-20">
-        <img alt="Vinayaka Mission's Research Foundation" class="max-h-full w-auto object-contain" src="vmrf.png"/>
+        <img alt="Vinayaka Mission's Research Foundation" class="max-h-full w-auto object-contain" src="vmrf.webp" loading="lazy"/>
       </div>
       <div class="flex items-center justify-center h-20">
-        <img alt="AVMC" class="max-h-full w-auto object-contain" src="avmc.png"/>
+        <img alt="AVMC" class="max-h-full w-auto object-contain" src="avmc.webp" loading="lazy"/>
       </div>
       <div class="flex items-center justify-center h-20">
-        <img alt="Vinayaka Missions Superspeciality Hospital" class="max-h-full w-auto object-contain" src="vmsh.png"/>
+        <img alt="Vinayaka Missions Superspeciality Hospital" class="max-h-full w-auto object-contain" src="vmsh.webp" loading="lazy"/>
       </div>
     </div>
   </div>
@@ -442,7 +381,7 @@
           <div class="featured-inner group speaker-card relative p-4">
             <div class="absolute top-0 right-0 bg-primary text-white text-[10px] font-black uppercase tracking-widest px-4 py-1.5 rounded-tr-[22px] rounded-bl-2xl z-10">Featured Speaker</div>
             <div class="relative aspect-[4/5] rounded-2xl overflow-hidden mb-4 shadow-md bg-surface-container">
-              <img alt="Prof. Dato' Sri Dr. Mike Chan" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" style="object-position: center 5%" src="mikechan.jpg"/>
+              <img alt="Prof. Dato' Sri Dr. Mike Chan" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" style="object-position: center 5%" src="mikechan.webp" loading="lazy"/>
             </div>
             <h4 class="font-bold text-xl mb-1 text-on-surface">Prof. Dato' Sri Dr. Mike Chan</h4>
             <p class="text-on-surface-variant text-sm mb-2">Chairman & Scientist, Regenerative Medicine</p>
@@ -456,7 +395,7 @@
       <!-- Speaker 2 — Dmytro Klokol -->
       <div class="cursor-pointer group speaker-card" onclick="openSpeakerModal('dmytro')">
         <div class="relative aspect-[4/5] rounded-3xl overflow-hidden mb-4 shadow-md bg-surface-container">
-          <img alt="Prof. Dr. Dmytro Klokol" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="dmytro.jpg"/>
+          <img alt="Prof. Dr. Dmytro Klokol" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="dmytro.webp" loading="lazy"/>
         </div>
         <h4 class="font-bold text-xl mb-1 text-on-surface">Prof. Dr. Dmytro Klokol</h4>
         <p class="text-on-surface-variant text-sm mb-2">Medical Head & General Surgeon</p>
@@ -468,7 +407,7 @@
       <!-- Speaker 3 — Olha Nishkumai -->
       <div class="cursor-pointer group speaker-card" onclick="openSpeakerModal('olha')">
         <div class="relative aspect-[4/5] rounded-3xl overflow-hidden mb-4 shadow-md bg-surface-container">
-          <img alt="Prof. Dr. Olha Nishkumai" class="w-full h-full object-cover olha-img" style="object-position: center top" src="olha.jpg"/>
+          <img alt="Prof. Dr. Olha Nishkumai" class="w-full h-full object-cover olha-img" style="object-position: center top" src="olha.webp" loading="lazy"/>
         </div>
         <h4 class="font-bold text-xl mb-1 text-on-surface">Prof. Dr. Olha Nishkumai</h4>
         <p class="text-on-surface-variant text-sm mb-2">Cardiologist & Rheumatologist</p>
@@ -480,7 +419,7 @@
       <!-- Speaker 4 — Glen Alvin -->
       <div class="cursor-pointer group speaker-card" onclick="openSpeakerModal('glen-alvin')">
         <div class="relative aspect-[4/5] rounded-3xl overflow-hidden mb-4 shadow-md bg-surface-container">
-          <img alt="Dr. G.K. Glen Alvin" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" style="object-position: center 15%" src="glenalwin.jpg"/>
+          <img alt="Dr. G.K. Glen Alvin" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" style="object-position: center 15%" src="glenalwin.webp" loading="lazy"/>
         </div>
         <h4 class="font-bold text-xl mb-1 text-on-surface">Dr. G.K. Glen Alvin</h4>
         <p class="text-on-surface-variant text-sm mb-2">Medical Director</p>
@@ -492,7 +431,7 @@
       <!-- Speaker 5 — Bawani Nesamany -->
       <div class="cursor-pointer group speaker-card" onclick="openSpeakerModal('bawani')">
         <div class="relative aspect-[4/5] rounded-3xl overflow-hidden mb-4 shadow-md bg-surface-container">
-          <img alt="Dr. Bawani Nesamany" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" src="bawani.jpg"/>
+          <img alt="Dr. Bawani Nesamany" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" src="bawani.webp" loading="lazy"/>
         </div>
         <h4 class="font-bold text-xl mb-1 text-on-surface">Dr. Bawani Nesamany</h4>
         <p class="text-on-surface-variant text-sm mb-2">Academy Board Advisor</p>
@@ -504,7 +443,7 @@
       <!-- Speaker 6 — Prabhu Kumar Raju -->
       <div class="cursor-pointer group speaker-card" onclick="openSpeakerModal('prabhu')">
         <div class="relative aspect-[4/5] rounded-3xl overflow-hidden mb-4 shadow-md bg-surface-container">
-          <img alt="Dr. Prabhu Kumar Raju" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" src="prabhukumar.jpg"/>
+          <img alt="Dr. Prabhu Kumar Raju" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" src="prabhukumar.webp" loading="lazy"/>
         </div>
         <h4 class="font-bold text-xl mb-1 text-on-surface">Dr. Prabhu Kumar Raju</h4>
         <p class="text-on-surface-variant text-sm mb-2">Regenerative Medicine Expert</p>
@@ -516,7 +455,7 @@
       <!-- Speaker 7 — V.N. Selvam -->
       <div class="cursor-pointer group speaker-card" onclick="openSpeakerModal('selvam')">
         <div class="relative aspect-[4/5] rounded-3xl overflow-hidden mb-4 shadow-md bg-surface-container">
-          <img alt="Dr. V.N. Selvam" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" style="object-position: center top" src="selvam.jpg"/>
+          <img alt="Dr. V.N. Selvam" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" style="object-position: center top" src="selvam.webp" loading="lazy"/>
         </div>
         <h4 class="font-bold text-xl mb-1 text-on-surface">Dr. V.N. Selvam</h4>
         <p class="text-on-surface-variant text-sm mb-2">Medical Director & Senior Consultant</p>
@@ -528,7 +467,7 @@
       <!-- Speaker 8 — S. Ravikumar -->
       <div class="cursor-pointer group speaker-card" onclick="openSpeakerModal('ravikumar')">
         <div class="relative aspect-[4/5] rounded-3xl overflow-hidden mb-4 shadow-md bg-surface-container">
-          <img alt="Prof. Dr. S. Ravikumar" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="ravikumar.jpg"/>
+          <img alt="Prof. Dr. S. Ravikumar" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="ravikumar.webp" loading="lazy"/>
         </div>
         <h4 class="font-bold text-xl mb-1 text-on-surface">Prof. Dr. S. Ravikumar</h4>
         <p class="text-on-surface-variant text-sm mb-2">Assistant Director of Research</p>
@@ -1035,7 +974,7 @@
       </div>
       <div class="w-full lg:w-1/2 relative">
         <div class="absolute -inset-4 bg-primary/5 rounded-[2.5rem] blur-2xl"></div>
-        <img alt="Medical Research" class="relative rounded-[2rem] shadow-2xl w-full object-cover aspect-video border-8 border-surface-container" src="hero-background.jpg"/>
+        <img alt="Medical Research" class="relative rounded-[2rem] shadow-2xl w-full object-cover aspect-video border-8 border-surface-container" src="hero-background.webp" loading="lazy"/>
       </div>
     </div>
   </div>
@@ -1052,21 +991,21 @@
       <!-- Person 1 -->
       <div class="flex flex-col items-center text-center">
         <div class="w-48 h-48 rounded-full overflow-hidden shadow-lg mb-5 bg-surface-container">
-          <img alt="Dr. A.S. Ganesan" class="w-full h-full object-cover" src="Dr.A.S.Ganesan.jpeg"/>
+          <img alt="Dr. A.S. Ganesan" class="w-full h-full object-cover" src="Dr.A.S.Ganesan.webp" loading="lazy"/>
         </div>
         <h4 class="font-bold text-lg text-on-surface">Dr. A.S. Ganesan</h4>
       </div>
       <!-- Person 2 -->
       <div class="flex flex-col items-center text-center">
         <div class="w-48 h-48 rounded-full overflow-hidden shadow-lg mb-5 bg-surface-container">
-          <img alt="Dr. Anuradha Ganesan" class="w-full h-full object-cover" src="Dr.Anuradha-Ganesan.jpeg"/>
+          <img alt="Dr. Anuradha Ganesan" class="w-full h-full object-cover" src="Dr.Anuradha-Ganesan.webp" loading="lazy"/>
         </div>
         <h4 class="font-bold text-lg text-on-surface">Dr. Anuradha Ganesan</h4>
       </div>
       <!-- Person 3 -->
       <div class="flex flex-col items-center text-center">
         <div class="w-48 h-48 rounded-full overflow-hidden shadow-lg mb-5 bg-surface-container">
-          <img alt="Mr. J. Suresh Samuel" class="w-full h-full object-cover" src="Mr.J.Suresh Samuel.jpeg"/>
+          <img alt="Mr. J. Suresh Samuel" class="w-full h-full object-cover" src="Mr.J.Suresh Samuel.webp" loading="lazy"/>
         </div>
         <h4 class="font-bold text-lg text-on-surface">Mr. J. Suresh Samuel</h4>
       </div>
@@ -1127,7 +1066,7 @@
     <div class="flex flex-col lg:flex-row justify-between gap-10 md:gap-12 mb-12 md:mb-16">
       <!-- Brand — left -->
       <div class="lg:w-1/2">
-        <img alt="MEDICREATIVE Logo" class="h-16 md:h-24 w-auto object-contain mb-4 -ml-4 md:-ml-24" src="logo.png"/>
+        <img alt="MEDICREATIVE Logo" class="h-16 md:h-24 w-auto object-contain mb-4 -ml-4 md:-ml-24" src="logo.webp" loading="lazy"/>
         <p class="text-on-surface-variant text-sm leading-snug max-w-xs">Advancing medical frontiers through<br/>interdisciplinary clinical research and<br/>cutting-edge healthcare delivery.</p>
       </div>
       <!-- Quick Links + Contact — right end -->
