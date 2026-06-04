@@ -127,6 +127,120 @@
       #agenda .group > div:first-child { width: 100% !important; text-align: left !important; padding-top: 0.25rem !important; }
       #agenda .group > div:nth-child(2) { padding-left: 1.25rem !important; }
     }
+
+    .coupon-section {
+      background: #ffffff;
+      padding: 5.5rem 0 3.5rem;
+    }
+    .coupon-shell {
+      max-width: 72.8rem;
+    }
+    .coupon-grid {
+      gap: 2rem;
+    }
+    .coupon-card {
+      position: relative;
+      display: flex;
+      min-height: 14rem;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: visible;
+      border: 3px solid #00685d;
+      border-radius: 2rem;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(248, 250, 251, 0.92)),
+        #ffffff;
+      padding: 2rem;
+      box-shadow: 0 24px 42px rgba(25, 28, 29, 0.1), 0 8px 18px rgba(0, 104, 93, 0.1);
+    }
+    .coupon-badge {
+      position: absolute;
+      left: 0;
+      top: 1.9rem;
+      display: flex;
+      height: 3rem;
+      width: 3rem;
+      transform: translateX(-45%);
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      background: #00685d;
+      color: #ffffff;
+      box-shadow: 0 10px 22px rgba(0, 104, 93, 0.24);
+    }
+    .coupon-code-box {
+      display: flex;
+      min-height: 4.25rem;
+      flex: 1;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid #e1e6e8;
+      border-radius: 0.8rem;
+      background: #f5f8f8;
+      padding: 0.75rem 1rem;
+    }
+    .coupon-code {
+      color: #00685d;
+      font-size: 1.5rem;
+      font-weight: 900;
+      letter-spacing: 0.18em;
+      line-height: 1.15;
+    }
+    .coupon-copy {
+      min-height: 4.25rem;
+      min-width: 6.25rem;
+      border-radius: 0.8rem;
+      background: #00685d;
+      color: #ffffff;
+      font-size: 0.875rem;
+      font-weight: 900;
+      letter-spacing: 0.06em;
+      padding: 0.75rem 1.25rem;
+      text-transform: uppercase;
+      transition: background-color 150ms ease, transform 150ms ease;
+    }
+    .coupon-copy:hover {
+      background: #00584f;
+    }
+    .coupon-copy:active {
+      transform: translateY(1px);
+    }
+    @media (min-width: 640px) {
+      .coupon-section {
+        padding-top: 7rem;
+        padding-bottom: 5rem;
+      }
+      .coupon-card {
+        min-height: 14.6rem;
+        padding: 2.25rem;
+      }
+    }
+    @media (max-width: 639px) {
+      .coupon-grid {
+        gap: 1.25rem;
+      }
+      .coupon-card {
+        min-height: 12.5rem;
+        padding: 1.5rem;
+      }
+      .coupon-badge {
+        left: 1.5rem;
+        top: 1.35rem;
+        height: 2.5rem;
+        width: 2.5rem;
+        transform: none;
+      }
+      .coupon-card h3 {
+        padding-left: 3.25rem;
+      }
+      .coupon-copy {
+        min-width: 5.25rem;
+      }
+      .coupon-code {
+        font-size: 1.25rem;
+        letter-spacing: 0.12em;
+      }
+    }
   </style>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-SKH1L9FC51"></script>
@@ -486,9 +600,9 @@
   <div class="max-w-7xl mx-auto px-4">
     <div class="text-center mb-20">
       <h2 class="text-5xl font-extrabold mb-6">Registration Passes</h2>
-      <p class="text-xl text-on-surface-variant">Select your attendance level for the MediCreative Symposium.</p>
+      <p class="text-xl text-on-surface-variant">Select your attendance level for BRMTILIM Chennai 2026.</p>
     </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8 max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto justify-items-center">
 
       <!-- Domestic — Doctors -->
       <div class="border-2 border-primary rounded-3xl p-8 flex flex-col shadow-2xl bg-white relative">
@@ -568,6 +682,47 @@
         <button onclick="openTicketModal('intl-student')" class="w-full py-3 bg-surface-container text-primary font-semibold text-sm rounded-xl group-hover:bg-primary group-hover:text-white transition-all">Buy Pass</button>
       </div>
 
+
+      <!-- One Day Pass — Doctors -->
+      <div class="border border-surface-container-high rounded-3xl p-8 flex flex-col hover:shadow-xl transition-all duration-300 bg-white group">
+        <div class="mb-3">
+          <span class="inline-flex items-center gap-1.5 text-xs font-bold bg-orange-50 text-orange-600 px-2.5 py-1 rounded-full mb-3">🇮🇳 India — Domestic</span>
+          <h3 class="text-xl font-bold mb-2 text-on-surface">One Day Pass <span class="text-primary">— Doctors</span></h3>
+          <p class="text-xs text-on-surface-variant mb-4 leading-relaxed">For medical practitioners &amp; healthcare professionals.</p>
+          <div class="flex items-baseline gap-2">
+            <span class="text-3xl font-black text-on-surface">₹ 5,000</span>
+            <span class="text-outline text-sm font-medium">/ person</span>
+          </div>
+        </div>
+        <ul class="space-y-3 mb-8 flex-grow">
+          <li class="flex items-center gap-3 text-on-surface-variant text-sm"><svg class="w-5 h-5 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg>1-day access</li>
+          <li class="flex items-center gap-3 text-on-surface-variant text-sm"><svg class="w-5 h-5 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg>Networking</li>
+          <li class="flex items-center gap-3 text-on-surface-variant text-sm"><svg class="w-5 h-5 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg>Lunch included</li>
+          <li class="flex items-start gap-3 text-on-surface-variant text-sm"><svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg>Participants can choose between 19th June Conference or 20th June Workshop</li>
+        </ul>
+        <button onclick="openTicketModal('oneday-doctor-conf')" class="w-full py-3 bg-primary text-white font-semibold text-sm rounded-xl shadow-lg shadow-primary/20 hover:bg-primary-container transition-all">Buy Pass</button>
+      </div>
+
+      <!-- One Day Pass — Students -->
+      <div class="border border-surface-container-high rounded-3xl p-8 flex flex-col hover:shadow-xl transition-all duration-300 bg-white group">
+        <div class="mb-3">
+          <span class="inline-flex items-center gap-1.5 text-xs font-bold bg-orange-50 text-orange-600 px-2.5 py-1 rounded-full mb-3">🇮🇳 India — Domestic</span>
+          <h3 class="text-xl font-bold mb-2 text-on-surface">One Day Pass <span class="text-primary">— Students</span></h3>
+          <p class="text-xs text-on-surface-variant mb-4 leading-relaxed">For UG/PG medical students enrolled in an Indian institution.</p>
+          <div class="flex items-baseline gap-2">
+            <span class="text-3xl font-black text-on-surface">₹ 3,000</span>
+            <span class="text-outline text-sm font-medium">/ person</span>
+          </div>
+        </div>
+        <ul class="space-y-3 mb-8 flex-grow">
+          <li class="flex items-center gap-3 text-on-surface-variant text-sm"><svg class="w-5 h-5 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg>1-day access</li>
+          <li class="flex items-center gap-3 text-on-surface-variant text-sm"><svg class="w-5 h-5 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg>Networking</li>
+          <li class="flex items-center gap-3 text-on-surface-variant text-sm"><svg class="w-5 h-5 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg>Lunch included</li>
+          <li class="flex items-start gap-3 text-on-surface-variant text-sm"><svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg>Participants can choose between 19th June Conference or 20th June Workshop</li>
+        </ul>
+        <button onclick="openTicketModal('oneday-student-conf')" class="w-full py-3 bg-surface-container text-primary font-semibold text-sm rounded-xl group-hover:bg-primary group-hover:text-white transition-all">Buy Pass</button>
+      </div>
+
     </div>
     <div class="flex flex-col items-center gap-1 mt-8">
       <div class="flex items-center justify-center gap-2">
@@ -579,6 +734,84 @@
   </div>
 </section>
 <!-- END: Registration Passes -->
+
+<!-- BEGIN: Coupon Section -->
+<section class="coupon-section">
+  <div class="coupon-shell mx-auto px-4 text-center">
+
+    <!-- Header -->
+    <div class="mb-10">
+      <span class="inline-block bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">Limited Time Offer</span>
+      <h2 class="text-4xl md:text-5xl font-black text-on-surface mb-3">Exclusive <span class="text-primary">Discount</span></h2>
+      <p class="text-on-surface-variant text-base">Use your coupon code at checkout and save instantly.</p>
+    </div>
+
+    <!-- Coupon Cards -->
+    <div class="coupon-grid grid grid-cols-1 sm:grid-cols-2 mb-10">
+
+      <!-- Doctors -->
+      <div class="coupon-card text-left">
+        <div>
+          <div class="coupon-badge">
+            <span class="text-white text-lg">⚕</span>
+          </div>
+          <h3 class="font-black text-on-surface text-xl uppercase tracking-wide leading-tight">Doctors &amp;<br>Practitioners</h3>
+        </div>
+        <div>
+          <p class="text-xs text-on-surface-variant uppercase tracking-widest mb-3 font-bold text-center">Coupon Code</p>
+          <div class="flex items-center gap-4">
+            <div class="coupon-code-box">
+              <span id="code-doc" class="coupon-code">VMRF-DOC</span>
+            </div>
+            <button onclick="copyCode('code-doc','copy-doc')" id="copy-doc" class="coupon-copy flex-shrink-0">Copy</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Students -->
+      <div class="coupon-card text-left">
+        <div>
+          <div class="coupon-badge">
+            <span class="text-white text-lg">🎓</span>
+          </div>
+          <h3 class="font-black text-on-surface text-xl uppercase tracking-wide leading-tight">Registering<br>Students</h3>
+        </div>
+        <div>
+          <p class="text-xs text-on-surface-variant uppercase tracking-widest mb-3 font-bold text-center">Coupon Code</p>
+          <div class="flex items-center gap-4">
+            <div class="coupon-code-box">
+              <span id="code-std" class="coupon-code">VMRF-STD</span>
+            </div>
+            <button onclick="copyCode('code-std','copy-std')" id="copy-std" class="coupon-copy flex-shrink-0">Copy</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="flex items-center justify-center gap-4 flex-wrap mb-4">
+      <span class="text-primary text-xs font-black uppercase tracking-widest">★ More Value</span>
+      <span class="text-outline">|</span>
+      <span class="text-primary text-xs font-black uppercase tracking-widest">More Benefits</span>
+      <span class="text-outline">|</span>
+      <span class="text-primary text-xs font-black uppercase tracking-widest">Limited Time Offer ★</span>
+    </div>
+    <p class="text-on-surface-variant text-base italic">Register Now &amp; Save More!</p>
+    <p class="mt-3 text-primary text-sm font-bold uppercase tracking-wide">The discount coupons are applicable only for two day pass.</p>
+  </div>
+</section>
+<script>
+  function copyCode(spanId, btnId) {
+    var text = document.getElementById(spanId).textContent;
+    navigator.clipboard.writeText(text).then(function() {
+      var btn = document.getElementById(btnId);
+      btn.textContent = 'Copied!';
+      setTimeout(function() { btn.textContent = 'Copy'; }, 2000);
+    });
+  }
+</script>
+<!-- END: Coupon Section -->
 
 <!-- BEGIN: Agenda Section -->
 <section class="py-11 md:py-[5.5rem] bg-white text-on-surface" id="agenda">
@@ -1261,13 +1494,21 @@
     'doctor':       'https://konfhub.com/widget/brmtilm2026?desc=false&secondaryBg=F7F7F7&ticketBg=F7F7F7&borderCl=F7F7F7&bg=FFFFFF&fontColor=1e1f24&ticketCl=1e1f24&btnColor=006e66&fontFamily=Hind&borderRadius=10&widget_type=standard&tickets=100676&ticketId=100676%7C1',
     'student':      'https://konfhub.com/widget/brmtilm2026?desc=false&secondaryBg=F7F7F7&ticketBg=F7F7F7&borderCl=F7F7F7&bg=FFFFFF&fontColor=1e1f24&ticketCl=1e1f24&btnColor=006e66&fontFamily=Hind&borderRadius=10&widget_type=standard&tickets=100677&ticketId=100677%7C1',
     'intl-doctor':  'https://konfhub.com/widget/brmtilm2026?desc=false&secondaryBg=F7F7F7&ticketBg=F7F7F7&borderCl=F7F7F7&bg=FFFFFF&fontColor=1e1f24&ticketCl=1e1f24&btnColor=006e66&fontFamily=Hind&borderRadius=10&widget_type=standard&tickets=100807&ticketId=100807%7C1',
-    'intl-student': 'https://konfhub.com/widget/brmtilm2026?desc=false&secondaryBg=F7F7F7&ticketBg=F7F7F7&borderCl=F7F7F7&bg=FFFFFF&fontColor=1e1f24&ticketCl=1e1f24&btnColor=006e66&fontFamily=Hind&borderRadius=10&widget_type=standard&tickets=100808&ticketId=100808%7C1'
+    'intl-student':        'https://konfhub.com/widget/brmtilm2026?desc=false&secondaryBg=F7F7F7&ticketBg=F7F7F7&borderCl=F7F7F7&bg=FFFFFF&fontColor=1e1f24&ticketCl=1e1f24&btnColor=006e66&fontFamily=Hind&borderRadius=10&widget_type=standard&tickets=100808&ticketId=100808%7C1',
+    'oneday-doctor-conf':  'https://konfhub.com/widget/brmtilm2026?desc=false&secondaryBg=F7F7F7&ticketBg=F7F7F7&borderCl=F7F7F7&bg=FFFFFF&fontColor=1e1f24&ticketCl=1e1f24&btnColor=006e5e&fontFamily=Hind&borderRadius=10&widget_type=standard&tickets=104701&ticketId=104701%7C1',
+    'oneday-doctor-ws':    'https://konfhub.com/widget/brmtilm2026?desc=false&secondaryBg=F7F7F7&ticketBg=F7F7F7&borderCl=F7F7F7&bg=FFFFFF&fontColor=1e1f24&ticketCl=1e1f24&btnColor=006e66&fontFamily=Hind&borderRadius=10&widget_type=standard',
+    'oneday-student-conf': 'https://konfhub.com/widget/brmtilm2026?desc=false&secondaryBg=F7F7F7&ticketBg=F7F7F7&borderCl=F7F7F7&bg=FFFFFF&fontColor=1e1f24&ticketCl=1e1f24&btnColor=006e66&fontFamily=Hind&borderRadius=10&widget_type=standard&tickets=104702&ticketId=104702%7C1',
+    'oneday-student-ws':   'https://konfhub.com/widget/brmtilm2026?desc=false&secondaryBg=F7F7F7&ticketBg=F7F7F7&borderCl=F7F7F7&bg=FFFFFF&fontColor=1e1f24&ticketCl=1e1f24&btnColor=006e66&fontFamily=Hind&borderRadius=10&widget_type=standard'
   };
   var TICKET_TITLES = {
-    'doctor':       'Register — Doctors Pass (India)',
-    'student':      'Register — Students Pass (India)',
-    'intl-doctor':  'Register — International Doctors Pass',
-    'intl-student': 'Register — International Students Pass'
+    'doctor':              'Register — Doctors Pass (India)',
+    'student':             'Register — Students Pass (India)',
+    'intl-doctor':         'Register — International Doctors Pass',
+    'intl-student':        'Register — International Students Pass',
+    'oneday-doctor-conf':  'Register — One Day Doctors Pass · 19 Jun Conference',
+    'oneday-doctor-ws':    'Register — One Day Doctors Pass · 20 Jun Workshop',
+    'oneday-student-conf': 'Register — One Day Students Pass · 19 Jun Conference',
+    'oneday-student-ws':   'Register — One Day Students Pass · 20 Jun Workshop'
   };
   function openTicketModal(type) {
     var modal = document.getElementById('ticket-modal');
